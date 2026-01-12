@@ -1,0 +1,7 @@
+<Solution>
+  <Folder Name="/Example/">
+    <Project Path="SwMsgTs/SwMsgTs.csproj" />
+  </Folder>
+  <Project Path="Common/Common.csproj" Id="4dc69aa0-5b65-4a96-bd8d-0dfdbe752cae" />
+  <Project Path="SldWorksEx/SldWorksEx.csproj" />
+</Solution>

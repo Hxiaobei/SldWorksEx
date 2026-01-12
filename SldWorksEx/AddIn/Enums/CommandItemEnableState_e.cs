@@ -1,0 +1,35 @@
+﻿//**********************
+//SwEx.AddIn - development tools for SOLIDWORKS add-ins
+//Copyright(C) 2019 www.codestack.net
+//License: https://github.com/codestackdev/swex-addin/blob/master/LICENSE
+//Product URL: https://www.codestack.net/labs/solidworks/swex/add-in/
+//**********************
+
+namespace CodeStack.SwEx.AddIn.Enums
+{
+    /// <summary>
+    /// Enumerates the possible states of the command (toolbar button or menu item) in SOLIDWORKS
+    /// </summary>
+    public enum CommandItemEnableState_e
+    {
+        /// <summary>
+        /// Deselects and disables the item
+        /// </summary>
+        DeselectDisable = 0,
+
+        /// <summary>
+        /// Deselects and enables the item; this is the default state if no update function is specified
+        /// </summary>
+        DeselectEnable = 1,
+
+        /// <summary>
+        /// Selects and disables the item
+        /// </summary>
+        SelectDisable = 2,
+
+        /// <summary>
+        /// Selects and enables the item 
+        /// </summary>
+        SelectEnable = 3
+    }
+}
