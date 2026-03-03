@@ -18,6 +18,13 @@ namespace Msg.SwMsgTs
         private TaskPaneHandlers _taskPaneHandlers;
 
         public override bool OnConnect() {
+            try {
+                var listener = new System.Diagnostics.TextWriterTraceListener(@"g:\code\SldWorksEx\sw_addin_log.txt");
+                System.Diagnostics.Trace.Listeners.Add(listener);
+                System.Diagnostics.Trace.AutoFlush = true;
+                System.Diagnostics.Trace.WriteLine("--- OnConnect Started ---");
+            } catch { }
+
             _cmdHandlers = new CommandHandlers(App);
             _taskPaneHandlers = new TaskPaneHandlers(App);
 

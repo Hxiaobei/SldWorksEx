@@ -9,6 +9,7 @@
 		<AssemblyTitle>SwMsgTs</AssemblyTitle>
 		<RunPostBuildEvent>OnBuildSuccess</RunPostBuildEvent>
 		<GenerateResourceUsePreserializedResources>true</GenerateResourceUsePreserializedResources>
+		<CopyLocalLockFileAssemblies>true</CopyLocalLockFileAssemblies>
 	</PropertyGroup>
 
 	<ItemGroup>
