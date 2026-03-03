@@ -2,6 +2,7 @@ using System;
 using System.Collections.Generic;
 using CodeStack.SwEx.AddIn.Enums;
 using CodeStack.SwMsgTs.Commands;
+using Msg.SwMsgTs.Features.Cube;
 using Msg.SwMsgTs.Features.Fillet;
 using SolidWorks.Interop.sldworks;
 
@@ -27,6 +28,9 @@ namespace Msg.SwMsgTs.Commands
                     break;
                 case Commands_e.ParamsMacroFeature:
                     CreateBoundingCylinderMacroFeature();
+                    return;
+                case Commands_e.CubeMacroFeature:
+                    CreateCubeMacroFeature();
                     return;
                 default:
                     break;
@@ -69,6 +73,30 @@ namespace Msg.SwMsgTs.Commands
             else
             {
                 _app.SendMsgToUser("Please select solid body");
+            }
+        }
+
+        public void CreateCubeMacroFeature()
+        {
+            var selMgr = _app.IActiveDoc2?.ISelectionManager;
+            if(selMgr == null) {
+                _app.SendMsgToUser("请先打开零件文档");
+                return;
+            }
+
+            var selectedObj = selMgr.GetSelectedObject6(1, -1);
+            if(selectedObj is IFace2 face) {
+                var surf = face.IGetSurface();
+                if(surf == null || !surf.IsPlane()) {
+                    _app.SendMsgToUser("请选择一个平面");
+                    return;
+                }
+
+                _app.IActiveDoc2.FeatureManager.InsertComFeature<CubeDefinition, CubeData>(
+                    new CubeData() { SelectedFace = face });
+            }
+            else {
+                _app.SendMsgToUser("请先选择一个平面");
             }
         }
     }

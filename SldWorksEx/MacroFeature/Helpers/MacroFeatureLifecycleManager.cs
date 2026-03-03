@@ -49,24 +49,10 @@ namespace CodeStack.SwEx.MacroFeature.Helpers
         {
             m_Logger.Log("Attaching events for lifecycle manager");
 
-            if (m_Model is IPartDoc)
-            {
-                (m_Model as PartDoc).DeleteItemPreNotify += OnDeleteItemPreNotify;
-                (m_Model as PartDoc).DeleteItemNotify += OnDeleteItemNotify;
-                (m_Model as PartDoc).DestroyNotify2 += OnDestroyNotify2;
-            }
-            else if (m_Model is IAssemblyDoc)
-            {
-                (m_Model as AssemblyDoc).DeleteItemPreNotify += OnDeleteItemPreNotify;
-                (m_Model as AssemblyDoc).DeleteItemNotify += OnDeleteItemNotify;
-                (m_Model as AssemblyDoc).DestroyNotify2 += OnDestroyNotify2;
-            }
-            else if (m_Model is IDrawingDoc)
-            {
-                (m_Model as DrawingDoc).DeleteItemPreNotify += OnDeleteItemPreNotify;
-                (m_Model as DrawingDoc).DeleteItemNotify += OnDeleteItemNotify;
-                (m_Model as DrawingDoc).DestroyNotify2 += OnDestroyNotify2;
-            }
+            DispatchDocEvents(
+                p => { p.DeleteItemPreNotify += OnDeleteItemPreNotify; p.DeleteItemNotify += OnDeleteItemNotify; p.DestroyNotify2 += OnDestroyNotify2; },
+                a => { a.DeleteItemPreNotify += OnDeleteItemPreNotify; a.DeleteItemNotify += OnDeleteItemNotify; a.DestroyNotify2 += OnDestroyNotify2; },
+                d => { d.DeleteItemPreNotify += OnDeleteItemPreNotify; d.DeleteItemNotify += OnDeleteItemNotify; d.DestroyNotify2 += OnDestroyNotify2; });
         }
         
         private int OnDeleteItemNotify(int EntityType, string itemName)
@@ -144,45 +130,30 @@ namespace CodeStack.SwEx.MacroFeature.Helpers
 
         private IFeature GetFeatureByName(string name)
         {
-            if (m_Model is IPartDoc)
-            {
-                return (m_Model as IPartDoc).FeatureByName(name) as IFeature;
-            }
-            else if (m_Model is IAssemblyDoc)
-            {
-                return (m_Model as IAssemblyDoc).FeatureByName(name) as IFeature;
-            }
-            else if (m_Model is IDrawingDoc)
-            {
-                return (m_Model as IDrawingDoc).FeatureByName(name) as IFeature;
-            }
-            else
-            {
-                return null;
+            switch(m_Model) {
+                case IPartDoc p: return p.FeatureByName(name) as IFeature;
+                case IAssemblyDoc a: return a.FeatureByName(name) as IFeature;
+                case IDrawingDoc d: return d.FeatureByName(name) as IFeature;
+                default: return null;
             }
         }
 
         private void DetachEvents()
         {
-            m_Logger.Log("Detacjing events for lifecycle manager");
+            m_Logger.Log("Detaching events for lifecycle manager");
 
-            if (m_Model is IPartDoc)
-            {
-                (m_Model as PartDoc).DeleteItemPreNotify -= OnDeleteItemPreNotify;
-                (m_Model as PartDoc).DeleteItemNotify -= OnDeleteItemNotify;
-                (m_Model as PartDoc).DestroyNotify2 -= OnDestroyNotify2;
-            }
-            else if (m_Model is IAssemblyDoc)
-            {
-                (m_Model as AssemblyDoc).DeleteItemPreNotify -= OnDeleteItemPreNotify;
-                (m_Model as AssemblyDoc).DeleteItemNotify -= OnDeleteItemNotify;
-                (m_Model as AssemblyDoc).DestroyNotify2 -= OnDestroyNotify2;
-            }
-            else if (m_Model is IDrawingDoc)
-            {
-                (m_Model as DrawingDoc).DeleteItemPreNotify -= OnDeleteItemPreNotify;
-                (m_Model as DrawingDoc).DeleteItemNotify -= OnDeleteItemNotify;
-                (m_Model as DrawingDoc).DestroyNotify2 -= OnDestroyNotify2;
+            DispatchDocEvents(
+                p => { p.DeleteItemPreNotify -= OnDeleteItemPreNotify; p.DeleteItemNotify -= OnDeleteItemNotify; p.DestroyNotify2 -= OnDestroyNotify2; },
+                a => { a.DeleteItemPreNotify -= OnDeleteItemPreNotify; a.DeleteItemNotify -= OnDeleteItemNotify; a.DestroyNotify2 -= OnDestroyNotify2; },
+                d => { d.DeleteItemPreNotify -= OnDeleteItemPreNotify; d.DeleteItemNotify -= OnDeleteItemNotify; d.DestroyNotify2 -= OnDestroyNotify2; });
+        }
+
+        private void DispatchDocEvents(Action<PartDoc> part, Action<AssemblyDoc> asm, Action<DrawingDoc> drw)
+        {
+            switch(m_Model) {
+                case PartDoc p: part(p); break;
+                case AssemblyDoc a: asm(a); break;
+                case DrawingDoc d: drw(d); break;
             }
         }
 

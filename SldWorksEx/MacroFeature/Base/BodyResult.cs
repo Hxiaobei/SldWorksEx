@@ -18,9 +18,6 @@ namespace CodeStack.SwEx.MacroFeature.Base {
     /// Represents the result of macro feature where macro feature holds the body or pattern of bodies
     /// </summary>
     public class BodyResult : RebuildResult {
-        [Obsolete, Browsable(false), EditorBrowsable(EditorBrowsableState.Never)]
-        internal protected BodyResult(params IBody2[] bodies) : this(null, false, bodies) {
-        }
 
         private static object GetBodyResult(IBody2[] bodies) {
             _ = bodies ?? throw new ArgumentNullException(nameof(bodies));

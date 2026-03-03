@@ -34,6 +34,11 @@ namespace CodeStack.SwMsgTs.Commands {
         [Description("Parameters Macro Feature")]
         [CommandItemInfo(true, true, swWorkspaceTypes_e.Part, true)]
         ParamsMacroFeature,
+
+        [Title("Cube Demo")]
+        [Description("Parametric Cube Macro Feature")]
+        [CommandItemInfo(true, true, swWorkspaceTypes_e.Part, true)]
+        CubeMacroFeature,
     }
 
     [CommandGroupInfo(typeof(Commands_e))]

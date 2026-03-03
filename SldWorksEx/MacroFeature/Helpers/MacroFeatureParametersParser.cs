@@ -87,16 +87,7 @@ namespace CodeStack.SwEx.MacroFeature.Helpers {
             IDisplayDimension[] localDispDims = null;
             try {
 
-                if(featData.GetDisplayDimensions() is object[] dispDimsObj) {
-                    localDispDims = new IDisplayDimension[dispDimsObj.Length];
-
-                    for(int i = 0; i < localDispDims.Length; i++) {
-                        localDispDims[i] = dispDimsObj[i] as IDisplayDimension;
-                        dispDimsObj[i] = null;
-                    }
-                } else {
-                    localDispDims = null;
-                }
+                localDispDims = ExtractDisplayDimensions(featData);
 
                 var localEditBodies = featData.EditBodies.ConvertSw<IBody2>();
 
@@ -114,7 +105,7 @@ namespace CodeStack.SwEx.MacroFeature.Helpers {
                         if(paramNames[i] == VERSION_PARAMETERS_NAME) {
                             paramsVersion = new Version(paramValues[i]);
                         } else if(paramNames[i] == VERSION_DIMENSIONS_NAME) {
-                            paramsVersion = new Version(paramValues[i]);
+                            dimsVersion = new Version(paramValues[i]);
                         } else {
                             parameters.Add(paramNames[i], paramValues[i]);
                         }
@@ -282,18 +273,7 @@ namespace CodeStack.SwEx.MacroFeature.Helpers {
 
             featData.EditBodies = bodies;
 
-            var dispDimsObj = featData.GetDisplayDimensions() as object[];
-
-            IDisplayDimension[] dispDims = null;
-
-            if(dispDimsObj != null) {
-                dispDims = new IDisplayDimension[dispDimsObj.Length];
-
-                for(int i = 0; i < dispDimsObj.Length; i++) {
-                    dispDims[i] = dispDimsObj[i] as IDisplayDimension;
-                    dispDimsObj[i] = null;
-                }
-            }
+            var dispDims = ExtractDisplayDimensions(featData);
 
             var dimsVersion = GetDimensionsVersion(featData);
 
@@ -315,6 +295,8 @@ namespace CodeStack.SwEx.MacroFeature.Helpers {
                                 featData.CurrentConfiguration.Name);
                         }
                     }
+
+                    SwComExtensions.ForceComCleanup();
                 } catch {
                     ReleaseDisplayDimensions(dispDims);
                     throw;
@@ -564,6 +546,18 @@ namespace CodeStack.SwEx.MacroFeature.Helpers {
             }
         }
 
+        private static IDisplayDimension[] ExtractDisplayDimensions(IMacroFeatureData featData) {
+            if(featData.GetDisplayDimensions() is object[] objs) {
+                var dims = new IDisplayDimension[objs.Length];
+                for(int i = 0; i < dims.Length; i++) {
+                    dims[i] = objs[i] as IDisplayDimension;
+                    objs[i] = null;
+                }
+                return dims;
+            }
+            return null;
+        }
+
         private void SetAndReleaseDimension(IDisplayDimension dispDim, int index, double val, string confName) {
             var dim = dispDim.GetDimension2(0);
 
@@ -572,8 +566,6 @@ namespace CodeStack.SwEx.MacroFeature.Helpers {
             if(dim != null && Marshal.IsComObject(dim)) Marshal.ReleaseComObject(dim);
 
             if(dispDim != null && Marshal.IsComObject(dispDim)) Marshal.ReleaseComObject(dispDim);
-
-            SwComExtensions.ForceComCleanup();
         }
 
         private void TraverseParametersDefinition(Type paramsType,

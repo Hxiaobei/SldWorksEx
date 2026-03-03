@@ -61,8 +61,8 @@ namespace CodeStack.SwEx.MacroFeature.Data
                 }
 
                 GC.Collect();
-                GC.Collect();
                 GC.WaitForPendingFinalizers();
+                GC.Collect();
             }
         }
     }

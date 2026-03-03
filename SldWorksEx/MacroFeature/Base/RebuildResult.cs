@@ -18,16 +18,6 @@ namespace CodeStack.SwEx.MacroFeature.Base {
     /// which should be returned from <see cref="MacroFeatureEx.OnRebuild(ISldWorks, IModelDoc2, IFeature)"/>
     /// </summary>
     public abstract class RebuildResult {
-        /// <summary>
-        /// Creates the result from temp body
-        /// </summary>
-        /// <param name="body">Body to return</param>
-        /// <returns>Result</returns>
-        /// <remarks>Use this result if you need to macro feature to generate a single body (solid or surface)</remarks>
-        [Obsolete("Obsolete method, use another overload"), Browsable(false), EditorBrowsable(EditorBrowsableState.Never)]
-        public static RebuildResult FromBody(IBody2 body) {
-            return new BodyResult(body);
-        }
 
         /// <inheritdoc cref="FromBody(IBody2)"/>
         /// <param name="featData">Pointer to feature data</param>
