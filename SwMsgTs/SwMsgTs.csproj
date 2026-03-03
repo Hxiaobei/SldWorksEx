@@ -5,7 +5,7 @@
 		<AssemblyName>SwMsgTs</AssemblyName>
 		<RootNamespace>Msg.SwMsgTs</RootNamespace>
 		<OutputType>Library</OutputType>
-		<GenerateDocumentationFile>true</GenerateDocumentationFile>
+		<GenerateDocumentationFile>False</GenerateDocumentationFile>
 		<AssemblyTitle>SwMsgTs</AssemblyTitle>
 		<RunPostBuildEvent>OnBuildSuccess</RunPostBuildEvent>
 	</PropertyGroup>
@@ -13,7 +13,7 @@
 	<ItemGroup>
 	  <ProjectReference Include="..\SldWorksEx\SldWorksEx.csproj" />
 	</ItemGroup>
-
+	
 	<ItemGroup>
 		<Reference Include="SolidWorks.Interop.sldworks">
 			<HintPath>..\thirdpty\SolidWorks.Interop.sldworks.dll</HintPath>

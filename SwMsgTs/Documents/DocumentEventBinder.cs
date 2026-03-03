@@ -1,7 +1,7 @@
 using CodeStack.SwEx.AddIn.Core;
 using SolidWorks.Interop.sldworks;
 
-namespace Msg.SwMsgTs.Documents {
+namespace CodeStack.SwMsgTs.Documents {
     class DocumentEventBinder {
         private readonly ISldWorks _app;
         private readonly DocumentEventHandlers _handlers;

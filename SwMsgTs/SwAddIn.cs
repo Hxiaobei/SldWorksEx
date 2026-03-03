@@ -4,11 +4,11 @@ using CodeStack.SwEx.AddIn;
 using CodeStack.SwEx.AddIn.Attributes;
 using CodeStack.SwEx.AddIn.Base;
 using CodeStack.SwEx.AddIn.Core;
-using Msg.SwMsgTs.Commands;
-using Msg.SwMsgTs.Documents;
-using Msg.SwMsgTs.View;
+using CodeStack.SwMsgTs.Commands;
+using CodeStack.SwMsgTs.Documents;
+using CodeStack.SwMsgTs.View;
 
-namespace Msg.SwMsgTs {
+namespace CodeStack.SwMsgTs {
     [Guid("86EA567D-79FA-4E3B-B66E-EAB660DB3D40"), ComVisible(true)]
     [AutoRegister("SwMsgTs", "SwMsgTs for SOLIDWORKS", true)]
     public class SwAddIn : SwAddInEx {

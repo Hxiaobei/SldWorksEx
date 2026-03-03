@@ -5,7 +5,7 @@
 //Product URL: https://www.codestack.net/labs/solidworks/swex/macro-feature
 //**********************
 
-using CodeStack.SwEx.MacroFeature.Helpers;
+using CodeStack.SwEx.SwExtensions;
 using SolidWorks.Interop.sldworks;
 using System;
 using System.Collections.Generic;
@@ -17,9 +17,9 @@ namespace CodeStack.SwEx.MacroFeature.Base {
     /// <summary>
     /// Represents the result of macro feature where macro feature holds the body or pattern of bodies
     /// </summary>
-    public class MacroFeatureRebuildBodyResult : MacroFeatureRebuildResult {
+    public class BodyResult : RebuildResult {
         [Obsolete, Browsable(false), EditorBrowsable(EditorBrowsableState.Never)]
-        internal protected MacroFeatureRebuildBodyResult(params IBody2[] bodies) : this(null, false, bodies) {
+        internal protected BodyResult(params IBody2[] bodies) : this(null, false, bodies) {
         }
 
         private static object GetBodyResult(IBody2[] bodies) {
@@ -30,10 +30,10 @@ namespace CodeStack.SwEx.MacroFeature.Base {
                 return bodies;
         }
 
-        internal protected MacroFeatureRebuildBodyResult(IMacroFeatureData featData,
+        internal protected BodyResult(IMacroFeatureData featData,
             bool updateEntityIds, params IBody2[] bodies) : base(GetBodyResult(bodies)) {
             // Enable multi-body support for SW 2013 SP5+
-            if(Context.CurrentApp.IsVersionNewerOrEqual(13, 5))
+            if(SwUtils.Sw.IsVersionNewerOrEqual(13, 5))
                 featData.EnableMultiBodyConsume = true;
 
             if(updateEntityIds) return;

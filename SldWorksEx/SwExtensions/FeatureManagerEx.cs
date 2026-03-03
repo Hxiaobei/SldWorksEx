@@ -1,4 +1,4 @@
-﻿//**********************
+//**********************
 //SwEx.MacroFeature - framework for developing macro features in SOLIDWORKS
 //Copyright(C) 2019 www.codestack.net
 //License: https://github.com/codestackdev/swex-macrofeature/blob/master/LICENSE
@@ -12,6 +12,7 @@ using CodeStack.SwEx.MacroFeature.Attributes;
 using CodeStack.SwEx.MacroFeature.Base;
 using CodeStack.SwEx.MacroFeature.Helpers;
 using CodeStack.SwEx.MacroFeature.Icons;
+using CodeStack.SwEx.SwExtensions;
 using SolidWorks.Interop.swconst;
 using System;
 using System.Collections.Generic;
@@ -31,7 +32,7 @@ namespace SolidWorks.Interop.sldworks {
 
         static FeatureManagerEx() {
             m_ParamsParser = new MacroFeatureParametersParser();
-            m_App = Context.CurrentApp;
+            m_App = SwUtils.Sw;
         }
 
         /// <summary>
@@ -96,7 +97,7 @@ namespace SolidWorks.Interop.sldworks {
                 var paramsType = typeof(TMacroFeature).GetArgumentsOfGenericType(typeof(MacroFeatureEx<>)).First();
                 IDisplayDimension[] dispDims;
                 IBody2[] editBodies;
-                MacroFeatureOutdateState_e state;
+                OutdateState_e state;
                 string[] dispDimParams;
                 parameters = m_ParamsParser.GetParameters(feat, featData, model, paramsType,
                     out dispDims, out dispDimParams, out editBodies, out state);

@@ -35,7 +35,7 @@ namespace CodeStack.SwEx.MacroFeature {
         public MacroFeatureEx() { m_ParamsParser = new MacroFeatureParametersParser(this.GetType()); }
 
         [Browsable(false), EditorBrowsable(EditorBrowsableState.Never)]
-        protected sealed override MacroFeatureRebuildResult OnRebuild(ISldWorks app, IModelDoc2 model, IFeature feature) {
+        protected sealed override RebuildResult OnRebuild(ISldWorks app, IModelDoc2 model, IFeature feature) {
             Logger.Log("Rebuilding. Getting parameters");
 
             var featDef = feature.GetDefinition() as IMacroFeatureData;
@@ -64,7 +64,7 @@ namespace CodeStack.SwEx.MacroFeature {
 
         /// <inheritdoc cref="MacroFeatureEx.OnRebuild(ISldWorks, IModelDoc2, IFeature)"/>
         /// <param name="parameters">Current instance of parameters of this macro feature</param>
-        protected virtual MacroFeatureRebuildResult OnRebuild(ISldWorks app, IModelDoc2 model, IFeature feature, TParams parameters)
+        protected virtual RebuildResult OnRebuild(ISldWorks app, IModelDoc2 model, IFeature feature, TParams parameters)
             => null;
 
 
@@ -76,14 +76,14 @@ namespace CodeStack.SwEx.MacroFeature {
         /// <param name="feature">Pointer to macro feature</param>
         /// <param name="dims">Pointer to dimensions of macro feature</param>
         /// <param name="parameters">Current instance of parameters (including the values of dimensions)</param>
-        /// <remarks>Use the <see cref="DimensionDataExtension.SetOrientation(DimensionData, Point, Vector)"/>
+        /// <remarks>Use the <see cref="DimensionDataExtension.SetOrientation(DimensionData, Vector3, Vector3)"/>
         /// helper method to set the dimension orientation and position based on its values</remarks>
         protected virtual void OnSetDimensions(ISldWorks app, IModelDoc2 model, IFeature feature,
-            MacroFeatureRebuildResult rebuildResult, DimensionDataCollection dims, TParams parameters) {
+            RebuildResult rebuildResult, DimensionDataCollection dims, TParams parameters) {
             OnSetDimensions(app, model, feature, dims, parameters);
         }
 
-        /// <inheritdoc cref="OnSetDimensions(ISldWorks, IModelDoc2, IFeature, MacroFeatureRebuildResult, DimensionDataCollection, TParams)"/>
+        /// <inheritdoc cref="OnSetDimensions(ISldWorks, IModelDoc2, IFeature, RebuildResult, DimensionDataCollection, TParams)"/>
         protected virtual void OnSetDimensions(ISldWorks app, IModelDoc2 model, IFeature feature,
             DimensionDataCollection dims, TParams parameters) { }
 
@@ -111,13 +111,13 @@ namespace CodeStack.SwEx.MacroFeature {
         /// <param name="parameters">Parameters data model</param>
         /// <remarks>Call this method before calling the <see href="http://help.solidworks.com/2016/english/api/sldworksapi/solidworks.interop.sldworks~solidworks.interop.sldworks.ifeature~modifydefinition.html">IFeature::ModifyDefinition</see></remarks>
         protected void SetParameters(IModelDoc2 model, IFeature feat, IMacroFeatureData featData, TParams parameters) {
-            SetParameters(model, feat, featData, parameters, out MacroFeatureOutdateState_e state);
+            SetParameters(model, feat, featData, parameters, out OutdateState_e state);
         }
 
         /// <inheritdoc cref="SetParameters(IModelDoc2, IFeature, IMacroFeatureData, TParams)"/>
         /// <param name="state">Current state of the parameters</param>
         protected void SetParameters(IModelDoc2 model, IFeature feat, IMacroFeatureData featData, TParams parameters,
-            out MacroFeatureOutdateState_e state)
+            out OutdateState_e state)
            => m_ParamsParser.SetParameters(model, feat, featData, parameters, out state);
 
 
@@ -125,7 +125,7 @@ namespace CodeStack.SwEx.MacroFeature {
         protected TParams GetParameters(IFeature feat, IMacroFeatureData featData, IModelDoc2 model,
             out IDisplayDimension[] dispDims, out IBody2[] editBodies)
             => m_ParamsParser.GetParameters<TParams>(feat, featData, model, out dispDims,
-                out string[] dispDimParams, out editBodies, out MacroFeatureOutdateState_e state);
+                out string[] dispDimParams, out editBodies, out OutdateState_e state);
 
 
         [Browsable(false), EditorBrowsable(EditorBrowsableState.Never)]
@@ -137,7 +137,7 @@ namespace CodeStack.SwEx.MacroFeature {
                 out paramValues, out selection, out dimTypes, out dimValues, out editBodies);
         }
 
-        private void UpdateDimensions(ISldWorks app, IModelDoc2 model, IFeature feature, MacroFeatureRebuildResult rebuildRes,
+        private void UpdateDimensions(ISldWorks app, IModelDoc2 model, IFeature feature, RebuildResult rebuildRes,
             IDisplayDimension[] dispDims, string[] dispDimParams, TParams parameters) {
 
             using(var dimsColl = new DimensionDataCollection(dispDims, dispDimParams))

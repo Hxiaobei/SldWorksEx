@@ -2,9 +2,9 @@ using System.ComponentModel;
 using CodeStack.SwEx.AddIn.Attributes;
 using CodeStack.SwEx.AddIn.Enums;
 using CodeStack.SwEx.Common.Attributes;
-using Msg.SwMsgTs.Properties;
+using CodeStack.SwMsgTs.Properties;
 
-namespace Msg.SwMsgTs.Commands {
+namespace CodeStack.SwMsgTs.Commands {
 
     [Title("SwMsgTs Commands")]
     [Description("Sample commands")]

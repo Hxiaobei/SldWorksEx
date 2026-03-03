@@ -5,6 +5,14 @@
 //Product URL: https://www.codestack.net/labs/solidworks/swex/add-in/
 //**********************
 
+using System;
+using System.Collections.Generic;
+using System.ComponentModel;
+using System.Diagnostics;
+using System.Linq;
+using System.Runtime.InteropServices;
+using System.Text;
+using System.Windows.Forms;
 using CodeStack.SwEx.AddIn.Attributes;
 using CodeStack.SwEx.AddIn.Base;
 using CodeStack.SwEx.AddIn.Core;
@@ -17,17 +25,10 @@ using CodeStack.SwEx.Common.Base;
 using CodeStack.SwEx.Common.Diagnostics;
 using CodeStack.SwEx.Common.Icons;
 using CodeStack.SwEx.Common.Reflection;
+using CodeStack.SwEx.SwExtensions;
 using SolidWorks.Interop.sldworks;
 using SolidWorks.Interop.swconst;
 using SolidWorks.Interop.swpublished;
-using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Diagnostics;
-using System.Linq;
-using System.Runtime.InteropServices;
-using System.Text;
-using System.Windows.Forms;
 
 namespace CodeStack.SwEx.AddIn {
     /// <inheritdoc/>
@@ -119,7 +120,7 @@ namespace CodeStack.SwEx.AddIn {
 
                 App.SetAddinCallbackInfo(0, this, AddInCookie);
                 CmdMgr = App.GetCommandManager(AddInCookie);
-
+   
                 return OnConnect();
             } catch(Exception ex) {
                 Logger.Log(ex);
@@ -302,7 +303,7 @@ namespace CodeStack.SwEx.AddIn {
             ITaskPaneHandler taskPaneHandler;
 
             using(var iconConv = new IconsConverter()) {
-                taskPaneView = App.SupportsHighResIcons(SldWorksExtension.HighResIconsScope_e.TaskPane)
+                taskPaneView = App.SupportsHighResIcons(SldWorksEx.HighResIconsScope_e.TaskPane)
                     ? App.CreateTaskpaneView3(iconConv.ConvertIcon(taskPaneIcon, true), tooltip)
                     : App.CreateTaskpaneView2(iconConv.ConvertIcon(taskPaneIcon, false)[0], tooltip);
 
@@ -434,7 +435,7 @@ namespace CodeStack.SwEx.AddIn {
 
             //NOTE: if commands are not used, main icon will fail if toolbar commands image list is not specified, so it is required to specify it explicitly
 
-            if(App.SupportsHighResIcons(SldWorksExtension.HighResIconsScope_e.CommandManager)) {
+            if(App.SupportsHighResIcons(SldWorksEx.HighResIconsScope_e.CommandManager)) {
                 var iconsList = iconsConv.ConvertIcon(mainIcon, true);
                 cmdGroup.MainIconList = iconsList;
 

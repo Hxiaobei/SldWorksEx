@@ -71,23 +71,21 @@ namespace CodeStack.SwEx.MacroFeature.Data {
         /// <param name="dimData">Dimension data></param>
         /// <param name="originPt">Dimension starting attach point</param>
         /// <param name="orientation">Orientation of the dimension. For the linear dimension this is a direction along the measured line. For radial dimension this is a axis of the cylinder</param>
-        /// <remarks>Call this method within the <see cref="MacroFeatureEx{TParams}.OnSetDimensions(ISldWorks, IModelDoc2, IFeature, Base.MacroFeatureRebuildResult, DimensionDataCollection, TParams)"/></remarks>
-        public static void SetOrientation(this DimensionData dimData, Point originPt, Vector orientation) {
+        /// <remarks>Call this method within the <see cref="MacroFeatureEx{TParams}.OnSetDimensions(ISldWorks, IModelDoc2, IFeature, Base.RebuildResult, DimensionDataCollection, TParams)"/></remarks>
+        public static void SetOrientation(this DimensionData dimData, Vector3 originPt, Vector3 orientation) {
             var length = (dimData.Dimension.GetSystemValue3((int)swInConfigurationOpts_e.swThisConfiguration, null) as double[])[0];
-
-            Vector dir = null;
-            Vector extDir = null;
-
+            Vector3? extDir = null;
+            Vector3 dir;
             if(dimData.DisplayDimension.Type2 == (int)swDimensionType_e.swRadialDimension) {
-                var yVec = new Vector(0, 1, 0);
+                var yVec = new Vector3(0, 1, 0);
 
-                if(orientation.IsSame(yVec)) {
-                    dir = new Vector(1, 0, 0);
+                if(orientation.Equals(yVec)) {
+                    dir = new Vector3(1, 0, 0);
                 } else {
-                    dir = orientation.Cross(yVec);
+                    dir = Vector3.Cross(orientation, yVec);
                 }
 
-                extDir = orientation.Cross(dir);
+                extDir = Vector3.Cross(orientation, dir);
             } else {
                 dir = orientation;
             }

@@ -47,7 +47,7 @@ namespace CodeStack.SwEx.MacroFeature {
         }
 
         [Browsable(false), EditorBrowsable(EditorBrowsableState.Never)]
-        protected override sealed MacroFeatureRebuildResult OnRebuild(ISldWorks app, IModelDoc2 model, IFeature feature, TParams parameters) {
+        protected override sealed RebuildResult OnRebuild(ISldWorks app, IModelDoc2 model, IFeature feature, TParams parameters) {
             return OnRebuild(GetHandler(app, model, feature), parameters);
         }
 
@@ -59,7 +59,7 @@ namespace CodeStack.SwEx.MacroFeature {
 
         /// <inheritdoc cref="MacroFeatureEx{TParams}.OnRebuild(ISldWorks, IModelDoc2, IFeature, TParams)"/>
         /// <param name="handler">Pointer to the macro feature handler of the feature being rebuilt</param>
-        protected virtual MacroFeatureRebuildResult OnRebuild(THandler handler, TParams parameters) {
+        protected virtual RebuildResult OnRebuild(THandler handler, TParams parameters) {
             return null;
         }
 

@@ -6,7 +6,7 @@ using CodeStack.SwEx.AddIn.Enums;
 using SolidWorks.Interop.sldworks;
 using SolidWorks.Interop.swconst;
 
-namespace Msg.SwMsgTs.Documents {
+namespace CodeStack.SwMsgTs.Documents {
     class DataStorageDocHandler : DocumentHandler {
         public class RevData {
             public int Revision { get; set; }

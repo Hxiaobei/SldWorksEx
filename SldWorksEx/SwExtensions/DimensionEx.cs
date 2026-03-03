@@ -5,23 +5,18 @@
 //Product URL: https://www.codestack.net/labs/solidworks/swex/macro-feature
 //**********************
 
-using CodeStack.SwEx.MacroFeature.Helpers;
 using CodeStack.SwEx.MacroFeature.Data;
 using CodeStack.SwEx.MathEx;
+using CodeStack.SwEx.SwExtensions;
 
-namespace SolidWorks.Interop.sldworks
-{
+namespace SolidWorks.Interop.sldworks {
     /// <summary>
     /// Extension methods of <see href="http://help.solidworks.com/2016/english/api/sldworksapi/solidworks.interop.sldworks~solidworks.interop.sldworks.idimension.html">IDimension</see> interface
     /// </summary>
-    public static class DimensionEx
-    {
+    public static class DimensionEx {
         private static readonly IMathUtility m_MathUtils;
 
-        static DimensionEx()
-        {
-            m_MathUtils = Context.CurrentApp.IGetMathUtility();
-        }
+        static DimensionEx() {m_MathUtils = SwUtils.Math;}
 
         /// <summary>
         /// Sets the direction of the macro feature dimension.
@@ -32,35 +27,29 @@ namespace SolidWorks.Interop.sldworks
         /// <param name="length">Length of the dimension (usually equal to its value)</param>
         /// <param name="extDir">Optional direction of extension line</param>
         /// <remarks>Call this method within the <see cref="CodeStack.SwEx.MacroFeature.MacroFeatureEx{TParams}.OnSetDimensions(ISldWorks, IModelDoc2, IFeature, DimensionDataCollection, TParams)"/></remarks>
-        public static void SetDirection(this IDimension dim,
-            Point originPt, Vector dir, double length, Vector extDir = null)
-        {
+        public static void SetDirection(this IDimension dim, Vector3 originPt, Vector3 dir, double length, Vector3? extDir = null) {
             var dimDirVec = m_MathUtils.CreateVector(dir.ToArray()) as MathVector;
             var startPt = m_MathUtils.CreatePoint(originPt.ToArray()) as IMathPoint;
             var endPt = m_MathUtils.CreatePoint(originPt.Move(dir, length).ToArray()) as IMathPoint;
 
-            var refPts = new IMathPoint[] 
+            var refPts = new IMathPoint[]
             {
                 startPt,
                 endPt,
                 m_MathUtils.CreatePoint(new double[3]) as IMathPoint
             };
 
-            if (extDir == null)
-            {
-                var yVec = new Vector(0, 1, 0);
-                if (dir.IsSame(yVec))
-                {
-                    extDir = new Vector(1, 0, 0);
-                }
-                else
-                {
-                    extDir = yVec.Cross(dir);
+            if(extDir == null) {
+                var yVec = new Vector3(0, 1, 0);
+                if(dir.Equals(yVec)) {
+                    extDir = new Vector3(1, 0, 0);
+                } else {
+                    extDir = Vector3.Cross(yVec, dir);
                 }
             }
 
-            var extDirVec = m_MathUtils.CreateVector(extDir.ToArray()) as MathVector;
-            
+            var extDirVec = m_MathUtils.CreateVector(extDir?.ToArray()) as MathVector;
+
             dim.DimensionLineDirection = dimDirVec;
             dim.ExtensionLineDirection = extDirVec;
             dim.ReferencePoints = refPts;

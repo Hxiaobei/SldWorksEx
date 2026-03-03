@@ -84,7 +84,7 @@ namespace CodeStack.SwEx.AddIn.Helpers
                         }
                     }))
                     {
-                        if (app.SupportsHighResIcons(SldWorksExtension.HighResIconsScope_e.TaskPane))
+                        if (app.SupportsHighResIcons(SldWorksEx.HighResIconsScope_e.TaskPane))
                         {
                             var imageList = iconsConv.ConvertIcon(icon, true);
                             if (!m_TaskPaneView.AddCustomButton2(imageList, tooltip))

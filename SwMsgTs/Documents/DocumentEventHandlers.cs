@@ -4,7 +4,7 @@ using CodeStack.SwEx.AddIn.Enums;
 using SolidWorks.Interop.sldworks;
 using SolidWorks.Interop.swconst;
 
-namespace Msg.SwMsgTs.Documents {
+namespace CodeStack.SwMsgTs.Documents {
     class DocumentEventHandlers {
         private readonly ISldWorks _app;
         private readonly SelectionFilter _filter = new SelectionFilter();

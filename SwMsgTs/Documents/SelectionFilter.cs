@@ -2,7 +2,7 @@ using CodeStack.SwEx.AddIn.Core;
 using CodeStack.SwEx.AddIn.Enums;
 using SolidWorks.Interop.swconst;
 
-namespace Msg.SwMsgTs.Documents {
+namespace CodeStack.SwMsgTs.Documents {
     class SelectionFilter {
         public bool ShowSelectionEvents { get; set; } = false;
 

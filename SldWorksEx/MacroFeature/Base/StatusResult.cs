@@ -14,20 +14,11 @@ namespace CodeStack.SwEx.MacroFeature.Base {
     /// <summary>
     /// Represents the status result from macro feature and optional error message
     /// </summary>
-    public class MacroFeatureRebuldStatusResult : MacroFeatureRebuildResult {
-        private static object GetResult(bool status, string error = "") {
-            if(status) {
-                return status;
-            } else {
-                if(!string.IsNullOrEmpty(error)) {
-                    return error;
-                } else {
-                    return status;
-                }
-            }
-        }
+    public class StatusResult : RebuildResult {
+        private static object GetResult(bool status, string error = "") 
+            => status ? status : string.IsNullOrEmpty(error) ? status : (object)error;
 
-        internal protected MacroFeatureRebuldStatusResult(bool status, string error = "")
+        internal protected StatusResult(bool status, string error = "")
             : base(GetResult(status, error)) {
         }
     }

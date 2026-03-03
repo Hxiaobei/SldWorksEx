@@ -1,6 +1,6 @@
 using SolidWorks.Interop.sldworks;
 
-namespace Msg.SwMsgTs.Commands {
+namespace CodeStack.SwMsgTs.Commands {
     class TaskPaneHandlers {
         private readonly ISldWorks _app;
 

@@ -26,9 +26,9 @@ namespace CodeStack.SwEx.MacroFeature {
         }
 
         [Browsable(false), EditorBrowsable(EditorBrowsableState.Never)]
-        protected override MacroFeatureRebuildResult OnRebuild(ISldWorks app, IModelDoc2 model, IFeature feature)
+        protected override RebuildResult OnRebuild(ISldWorks app, IModelDoc2 model, IFeature feature)
         {
-            return MacroFeatureRebuildResult.FromStatus(false, ObsoleteFeatureRebuildError);
+            return RebuildResult.FromStatus(false, ObsoleteFeatureRebuildError);
         }
 
         [Browsable(false), EditorBrowsable(EditorBrowsableState.Never)]

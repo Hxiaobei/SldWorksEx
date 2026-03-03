@@ -1,4 +1,4 @@
-﻿using CodeStack.SwEx.MacroFeature.Base;
+using CodeStack.SwEx.MacroFeature.Base;
 using CodeStack.SwEx.MacroFeature.Helpers;
 using SolidWorks.Interop.sldworks;
 using System;
@@ -33,7 +33,7 @@ namespace SolidWorks.Interop.sldworks
         {
             IDisplayDimension[] dispDims;
             IBody2[] bodies;
-            MacroFeatureOutdateState_e state;
+            OutdateState_e state;
             string[] dispDimParams;
             return m_ParamsParser.GetParameters<TParams>(feat, featData, model,
                 out dispDims, out dispDimParams, out bodies, out state);
@@ -50,7 +50,7 @@ namespace SolidWorks.Interop.sldworks
         public static void SetParameters<TParams>(this IMacroFeatureData featData, IFeature feat, IModelDoc2 model, TParams parameters)
             where TParams : class, new()
         {
-            MacroFeatureOutdateState_e state;
+            OutdateState_e state;
             m_ParamsParser.SetParameters(model, feat, featData, parameters, out state);
         }
     }

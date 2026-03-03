@@ -14,72 +14,81 @@ using SolidWorks.Interop.sldworks;
 using SolidWorks.Interop.swconst;
 using SolidWorks.Interop.swpublished;
 
-namespace CodeStack.SwEx.MacroFeature {
+namespace CodeStack.SwEx.MacroFeature
+{
     [ModuleInfo("SwEx.MacroFeature")]
-    public abstract class MacroFeatureEx : ISwComFeature, IModule {
+    public abstract class MacroFeatureEx : ISwComFeature, IModule
+    {
         private readonly string m_Provider;
         public ILogger Logger { get; }
 
-        protected MacroFeatureEx() {
+        protected MacroFeatureEx()
+        {
             // Provider
-            if(GetType().TryGetAttribute<OptionsAttribute>(out var opt))
+            if (GetType().TryGetAttribute<OptionsAttribute>(out var opt))
                 m_Provider = opt.Provider;
 
             Logger = LoggerFactory.Create(this);
             TryCreateIcons();
         }
 
-        private void TryCreateIcons() {
+        private void TryCreateIcons()
+        {
             var iconsConverter = new IconsConverter(MacroFeatureIconInfo.GetLocation(this.GetType()), false);
 
             MacroFeatureIcon regIcon = null;
             MacroFeatureIcon highIcon = null;
             MacroFeatureIcon suppIcon = null;
 
-            if(this.GetType().TryGetAttribute<FeatureIconAttribute>(out var featIco)) {
+            if (this.GetType().TryGetAttribute<FeatureIconAttribute>(out var featIco))
+            {
                 regIcon = featIco.Regular;
                 highIcon = featIco.Highlighted;
                 suppIcon = featIco.Suppressed;
             }
 
-            if(regIcon == null) {
+            if (regIcon == null)
+            {
                 Image icon = null;
 
-                if(this.GetType().TryGetAttribute<Common.Attributes.IconAttribute>(out var ico)) {
+                if (this.GetType().TryGetAttribute<Common.Attributes.IconAttribute>(out var ico))
+                {
                     icon = ico.Icon;
                 }
-                if(icon == null) icon = Resources.default_icon;
+                if (icon == null) icon = Resources.default_icon;
 
                 regIcon = new MasterIcon(MacroFeatureIconInfo.RegularName) { Icon = icon };
             }
-            if(highIcon == null) highIcon = regIcon.Clone(MacroFeatureIconInfo.HighlightedName);
-            if(suppIcon == null) suppIcon = regIcon.Clone(MacroFeatureIconInfo.SuppressedName);
+            if (highIcon == null) highIcon = regIcon.Clone(MacroFeatureIconInfo.HighlightedName);
+            if (suppIcon == null) suppIcon = regIcon.Clone(MacroFeatureIconInfo.SuppressedName);
 
 
             //Creation of icons may fail if user doesn't have write permissions or icon is locked
-            try {
+            try
+            {
                 iconsConverter.ConvertIcon(regIcon, true);
                 iconsConverter.ConvertIcon(suppIcon, true);
                 iconsConverter.ConvertIcon(highIcon, true);
                 iconsConverter.ConvertIcon(regIcon, false);
                 iconsConverter.ConvertIcon(suppIcon, false);
                 iconsConverter.ConvertIcon(highIcon, false);
-            } catch(Exception ex) {
+            }
+            catch (Exception ex)
+            {
                 Logger.Log(ex);
             }
         }
 
-        private void SetProvider(ISldWorks app, IFeature feat) {
-            if(string.IsNullOrEmpty(m_Provider))
-                return;
-
-            if(!app.IsVersionNewerOrEqual(16))
-                return;
-
-            if(feat.GetDefinition() is IMacroFeatureData data
-                && data.Provider != m_Provider)
+        private void SetProvider(ISldWorks app, IFeature feat)
+        {
+            if (string.IsNullOrEmpty(m_Provider)) return;
+            if (!app.IsVersionNewerOrEqual(16)) return;
+            if (feat.GetDefinition() is IMacroFeatureData data && data.Provider != m_Provider)
                 data.Provider = m_Provider;
         }
+
+        #region ISwComFeature 接口重新定义
+
 
         // ---------------------------
         // ISwComFeature 接口实现
@@ -87,24 +96,22 @@ namespace CodeStack.SwEx.MacroFeature {
 
         [Browsable(false), EditorBrowsable(EditorBrowsableState.Never)]
         public object Edit(object app, object model, object feature)
-            => OnEditDefinition(app as ISldWorks, model as IModelDoc2, feature as IFeature);
+            => OnEditDefinition((ISldWorks)app, (IModelDoc2)model, (IFeature)feature);
 
-
+        //TODO: regenerate method is called twice when feature edited and new parameters applied
         [Browsable(false), EditorBrowsable(EditorBrowsableState.Never)]
-        public object Regenerate(object app, object model, object feature) {
-            var swApp = app as ISldWorks;
-            var swModel = model as IModelDoc2;
-            var swFeat = feature as IFeature;
+        public object Regenerate(object app, object model, object feature)
+        {
+            var swApp = (ISldWorks)app;
+            var swFeat = (IFeature)feature;
 
             SetProvider(swApp, swFeat);
-
-            var res = OnRebuild(swApp, swModel, swFeat);
-            return res?.GetResult();
+            return OnRebuild(swApp, (IModelDoc2)model, swFeat)?.GetResult();
         }
 
         [Browsable(false), EditorBrowsable(EditorBrowsableState.Never)]
         public object Security(object app, object model, object feature)
-            => OnUpdateState(app as ISldWorks, model as IModelDoc2, feature as IFeature);
+             => OnUpdateState((ISldWorks)app, (IModelDoc2)model, (IFeature)feature);
 
 
         // ---------------------------
@@ -114,10 +121,11 @@ namespace CodeStack.SwEx.MacroFeature {
         protected virtual bool OnEditDefinition(ISldWorks app, IModelDoc2 model, IFeature feature)
             => true;
 
-        protected virtual MacroFeatureRebuildResult OnRebuild(ISldWorks app, IModelDoc2 model, IFeature feature)
+        protected virtual RebuildResult OnRebuild(ISldWorks app, IModelDoc2 model, IFeature feature)
             => null;
 
         protected virtual swMacroFeatureSecurityOptions_e OnUpdateState(ISldWorks app, IModelDoc2 model, IFeature feature)
             => swMacroFeatureSecurityOptions_e.swMacroFeatureSecurityByDefault;
+        #endregion
     }
 }

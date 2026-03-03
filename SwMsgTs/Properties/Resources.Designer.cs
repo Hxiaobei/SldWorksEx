@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace Msg.SwMsgTs.Properties {
+namespace CodeStack.SwMsgTs.Properties {
     using System;
     
     

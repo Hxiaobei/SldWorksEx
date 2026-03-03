@@ -4,6 +4,7 @@
     <TargetFramework>net48</TargetFramework>
     <AssemblyTitle>SldWorksEx</AssemblyTitle>
     <RootNamespace>CodeStack.SwEx</RootNamespace>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
   </PropertyGroup>
 
   <ItemGroup>

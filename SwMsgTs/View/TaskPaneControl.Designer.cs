@@ -1,4 +1,4 @@
-namespace Msg.SwMsgTs.View {
+namespace CodeStack.SwMsgTs.View {
     partial class TaskPaneControl {
         /// <summary> 
         /// Required designer variable.

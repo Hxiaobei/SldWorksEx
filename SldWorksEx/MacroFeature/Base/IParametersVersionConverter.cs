@@ -1,4 +1,4 @@
-﻿//**********************
+//**********************
 //SwEx.MacroFeature - framework for developing macro features in SOLIDWORKS
 //Copyright(C) 2019 www.codestack.net
 //License: https://github.com/codestackdev/swex-macrofeature/blob/master/LICENSE
@@ -63,7 +63,7 @@ namespace CodeStack.SwEx.MacroFeature.Base
         /// <remarks>If number of dimensions have changed in the new version - automatic upgrade is not possible
         /// as currently SOLIDWORKS API doesn't allow to change the existing display dimensions of macro feature.
         /// If this is the case return the <see cref="Placeholders.DisplayDimensionPlaceholder"/> as a placeholder of the updated dimension.
-        /// In this case dimension will not be create but feature will be operational and <see cref="MacroFeatureOutdateState_e.Dimensions"/> will be returned as the state of the feature parameters</remarks>
+        /// In this case dimension will not be create but feature will be operational and <see cref="OutdateState_e.Dimensions"/> will be returned as the state of the feature parameters</remarks>
         IDisplayDimension[] ConvertDisplayDimensions(IModelDoc2 model, IFeature feat, IDisplayDimension[] dispDims);
 
         /// <summary>
