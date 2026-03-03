@@ -4,8 +4,8 @@ using System.Diagnostics;
 
 namespace SolidWorks.Interop.sldworks {
     public static partial class SldWorksEx {
-        const int SW_2016_REV = 17;
-        const int SW_2017_REV = 17;
+        const int SW_2016_VERSION = 16;
+        const int SW_2017_VERSION = 17;
         internal enum HighResIconsScope_e {
             CommandManager,
             TaskPane
@@ -45,15 +45,15 @@ namespace SolidWorks.Interop.sldworks {
         }
 
         internal static bool SupportsHighResIcons(this ISldWorks app) 
-            => GetVersion(app) >= SW_2017_REV;
+            => GetVersion(app) >= SW_2017_VERSION;
         internal static bool SupportsHighResIcons(this ISldWorks app, HighResIconsScope_e scope) {
             var majorRev = GetVersion(app);
             switch(scope) {
                 case HighResIconsScope_e.CommandManager:
-                    return majorRev >= SW_2016_REV;
+                    return majorRev >= SW_2016_VERSION;
 
                 case HighResIconsScope_e.TaskPane:
-                    return majorRev >= SW_2017_REV;
+                    return majorRev >= SW_2017_VERSION;
 
                 default:
                     Debug.Assert(false, "Not supported scope");

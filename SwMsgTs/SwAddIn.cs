@@ -7,8 +7,10 @@ using CodeStack.SwEx.AddIn.Core;
 using CodeStack.SwMsgTs.Commands;
 using CodeStack.SwMsgTs.Documents;
 using CodeStack.SwMsgTs.View;
+using Msg.SwMsgTs.Commands;
 
-namespace CodeStack.SwMsgTs {
+namespace Msg.SwMsgTs
+{
     [Guid("86EA567D-79FA-4E3B-B66E-EAB660DB3D40"), ComVisible(true)]
     [AutoRegister("SwMsgTs", "SwMsgTs for SOLIDWORKS", true)]
     public class SwAddIn : SwAddInEx {

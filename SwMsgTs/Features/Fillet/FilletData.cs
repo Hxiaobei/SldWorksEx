@@ -20,7 +20,8 @@ using SolidWorks.Interop.sldworks;
 using SolidWorks.Interop.swconst;
 using SolidWorks.Interop.swpublished;
 
-namespace CodeStack.SwMsgTs.Features.Fillet {
+namespace Msg.SwMsgTs.Features.Fillet
+{
 
     [ComVisible(true)]
     [CodeStack.SwEx.Common.Attributes.Icon(typeof(Resources), nameof(Resources.fillet))]

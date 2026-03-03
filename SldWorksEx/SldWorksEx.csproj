@@ -5,7 +5,12 @@
     <AssemblyTitle>SldWorksEx</AssemblyTitle>
     <RootNamespace>CodeStack.SwEx</RootNamespace>
     <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+    <GenerateResourceUsePreserializedResources>true</GenerateResourceUsePreserializedResources>
   </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="System.Resources.Extensions" Version="8.0.0" />
+  </ItemGroup>
 
   <ItemGroup>
     <ProjectReference Include="..\Common\Common.csproj" />

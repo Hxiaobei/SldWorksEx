@@ -16,7 +16,8 @@ using CodeStack.SwMsgTs.Properties;
 using SolidWorks.Interop.sldworks;
 using SolidWorks.Interop.swconst;
 
-namespace CodeStack.SwMsgTs.Features.Fillet {
+namespace Msg.SwMsgTs.Features.Fillet
+{
     [ComVisible(true)]
     [FeatureIcon(typeof(Resources), nameof(Resources.fillet))]
     [Title("Fillet")]

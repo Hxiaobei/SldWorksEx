@@ -1,10 +1,11 @@
 using System;
 using System.Collections.Generic;
 using CodeStack.SwEx.AddIn.Enums;
-using CodeStack.SwMsgTs.Features.Fillet;
+using CodeStack.SwMsgTs.Commands;
+using Msg.SwMsgTs.Features.Fillet;
 using SolidWorks.Interop.sldworks;
 
-namespace CodeStack.SwMsgTs.Commands
+namespace Msg.SwMsgTs.Commands
 {
     class CommandHandlers
     {
@@ -63,8 +64,7 @@ namespace CodeStack.SwMsgTs.Commands
             if (_app.IActiveDoc2.ISelectionManager.GetSelectedObject6(1, -1) is IBody2 body)
             {
                 _app.IActiveDoc2.FeatureManager.InsertComFeature<FilletDefinition, FilletData>(
-                    new FilletData() { EditBodies = new List<IBody2> { body } }
-                    );
+                    new FilletData() { EditBodies = new List<IBody2> { body } });
             }
             else
             {

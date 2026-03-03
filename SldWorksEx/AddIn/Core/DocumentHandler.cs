@@ -201,41 +201,11 @@ namespace CodeStack.SwEx.AddIn.Core
             App = app;
             Model = model;
 
-            //TODO: remove this once the obsolete methods are removed
-            this.Access3rdPartyData += OnAccess3rdPartyData;
-            //---
-
             (App as SldWorks).ActiveModelDocChangeNotify += OnActiveModelDocChangeNotify;
 
             Initialized?.Invoke(this);
             OnInit();
         }
-
-        //TODO: remove this once the obsolete methods are removed
-        private void OnAccess3rdPartyData(DocumentHandler docHandler, Access3rdPartyDataState_e type)
-        {
-            switch (type)
-            {
-#pragma warning disable CS0618
-                case Access3rdPartyDataState_e.StorageRead:
-                    OnLoadFromStorageStore();
-                    break;
-
-                case Access3rdPartyDataState_e.StorageWrite:
-                    OnSaveToStorageStore();
-                    break;
-
-                case Access3rdPartyDataState_e.StreamRead:
-                    OnLoadFromStream();
-                    break;
-
-                case Access3rdPartyDataState_e.StreamWrite:
-                    OnSaveToStream();
-                    break;
-#pragma warning restore CS0618
-            }
-        }
-        //---
 
         private int OnActiveModelDocChangeNotify()
         {
@@ -265,37 +235,9 @@ namespace CodeStack.SwEx.AddIn.Core
         {
         }
 
-        [Obsolete("Deprecated. Use Access3rdPartyData event with StorageRead type instead")]
-        [Browsable(false), EditorBrowsable(EditorBrowsableState.Never)]
-        public virtual void OnLoadFromStorageStore()
-        {
-        }
-
-        [Obsolete("Deprecated. Use Access3rdPartyData event with StreamRead type instead")]
-        [Browsable(false), EditorBrowsable(EditorBrowsableState.Never)]
-        public virtual void OnLoadFromStream()
-        {
-        }
-
-        [Obsolete("Deprecated. Use Access3rdPartyData event with StorageWrite type instead")]
-        [Browsable(false), EditorBrowsable(EditorBrowsableState.Never)]
-        public virtual void OnSaveToStorageStore()
-        {
-        }
-
-        [Obsolete("Deprecated. Use Access3rdPartyData event with StreamWrite type instead")]
-        [Browsable(false), EditorBrowsable(EditorBrowsableState.Never)]
-        public virtual void OnSaveToStream()
-        {
-        }
-        
         public void Dispose()
         {
             (App as SldWorks).ActiveModelDocChangeNotify -= OnActiveModelDocChangeNotify;
-
-            //TODO: remove this once the obsolete methods are removed
-            this.Access3rdPartyData -= OnAccess3rdPartyData;
-            //---
 
             m_DocumentSaveEventsHandler.Dispose();
             m_ObjectSelectionEventsHandler.Dispose();

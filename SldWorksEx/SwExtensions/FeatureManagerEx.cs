@@ -27,13 +27,9 @@ namespace SolidWorks.Interop.sldworks {
     /// Extensions methods of <see href="http://help.solidworks.com/2016/english/api/sldworksapi/solidworks.interop.sldworks~solidworks.interop.sldworks.ifeaturemanager_members.html">IFeatureManager</see> interface
     /// </summary>
     public static class FeatureManagerEx {
-        private static readonly MacroFeatureParametersParser m_ParamsParser;
-        private static readonly ISldWorks m_App;
-
-        static FeatureManagerEx() {
-            m_ParamsParser = new MacroFeatureParametersParser();
-            m_App = SwUtils.Sw;
-        }
+        private static readonly MacroFeatureParametersParser m_ParamsParser
+            = new MacroFeatureParametersParser();
+        private static ISldWorks App => SwUtils.Sw;
 
         /// <summary>
         /// Inserts new macro feature
@@ -181,7 +177,7 @@ namespace SolidWorks.Interop.sldworks {
             if(string.IsNullOrEmpty(progId))
                 throw new NullReferenceException("Prog id for macro feature cannot be extracted");
 
-            var icons = MacroFeatureIconInfo.GetIcons(macroFeatType, m_App.SupportsHighResIcons());
+            var icons = MacroFeatureIconInfo.GetIcons(macroFeatType, App.SupportsHighResIcons());
 
             using(var selSet = new SelectionGroup(featMgr.Document.ISelectionManager)) {
                 if(selection?.Any() == true) {

@@ -13,20 +13,17 @@ namespace CodeStack.SwEx.SwExtensions {
         [DllImport("ole32.dll")]
         static extern int CreateBindCtx(uint reserved, out IBindCtx ppbc);
 
-        static readonly ISldWorks _swApp;
-        static readonly IMathUtility _swMath;
-        static readonly IModeler _swModeler;
+        static readonly Lazy<ISldWorks> _swApp = new Lazy<ISldWorks>(() =>
+            GetSwAppFromProcess(Process.GetCurrentProcess().Id)
+            ?? throw new InvalidOperationException("Failed to get the pointer to ISldWorks"));
+        static readonly Lazy<IMathUtility> _swMath
+            = new Lazy<IMathUtility>(() => Sw.IGetMathUtility());
+        static readonly Lazy<IModeler> _swModeler
+            = new Lazy<IModeler>(() => Sw.IGetModeler());
 
-        static SwUtils() {
-            _swApp = GetSwAppFromProcess(Process.GetCurrentProcess().Id)
-                ?? throw new NullReferenceException("Failed to get the pointer to ISldWorks");
-            _swMath = _swApp.IGetMathUtility();
-            _swModeler = _swApp.IGetModeler();
-        }
-
-        public static ISldWorks Sw => _swApp;
-        public static IMathUtility Math => _swMath;
-        public static IModeler Modeler => _swModeler;
+        public static ISldWorks Sw => _swApp.Value;
+        public static IMathUtility Math => _swMath.Value;
+        public static IModeler Modeler => _swModeler.Value;
 
         private static ISldWorks GetSwAppFromProcess(int processId) {
             var monikerName = $"SolidWorks_PID_{processId}";
@@ -42,18 +39,22 @@ namespace CodeStack.SwEx.SwExtensions {
                     var mk = arr[0];
                     if(mk == null) continue;
 
-                    string name;
                     try {
-                        mk.GetDisplayName(ctx, null, out name);
-                    } catch {
-                        continue;
+                        string name;
+                        try {
+                            mk.GetDisplayName(ctx, null, out name);
+                        } catch {
+                            continue;
+                        }
+
+                        if(!string.Equals(name, monikerName, StringComparison.OrdinalIgnoreCase))
+                            continue;
+
+                        rot.GetObject(mk, out var obj);
+                        return obj as ISldWorks;
+                    } finally {
+                        Marshal.ReleaseComObject(mk);
                     }
-
-                    if(!string.Equals(name, monikerName, StringComparison.OrdinalIgnoreCase))
-                        continue;
-
-                    rot.GetObject(mk, out var obj);
-                    return obj as ISldWorks;
                 }
             } finally {
                 if(enumMoniker != null) Marshal.ReleaseComObject(enumMoniker);
