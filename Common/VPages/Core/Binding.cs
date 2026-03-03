@@ -68,7 +68,7 @@ namespace VPages.Core {
             // Default: swallow. Override to log.
         }
 
-        public void Dispose() {
+        public virtual void Dispose() {
             if(_disposed)
                 return;
 

@@ -14,7 +14,6 @@ using System.Text;
 
 namespace SolidWorks.Interop.sldworks {
     public static class ModelerEx {
-        static int error;
         static readonly IModeler swModeler = SwUtils.Modeler;
         public static IBody2 CreateBox(this IModeler modeler, Vector3 center, Vector3 dir, ref Vector3 refDir,
             double width, double length, double height) {

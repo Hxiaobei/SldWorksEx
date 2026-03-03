@@ -29,11 +29,12 @@ namespace VPages.Binders {
                 _notifier.PropertyChanged += OnPropertyChanged;
         }
 
-        public void Dispose() {
+        public override void Dispose() {
             if(_notifier != null)
                 _notifier.PropertyChanged -= OnPropertyChanged;
 
             _notifier = null;
+            base.Dispose();
         }
 
         private void OnPropertyChanged(object sender, PropertyChangedEventArgs e) {
