@@ -17,6 +17,19 @@ namespace Msg.SwMsgTs
         private CommandHandlers _cmdHandlers;
         private TaskPaneHandlers _taskPaneHandlers;
 
+        static SwAddIn() {
+            AppDomain.CurrentDomain.AssemblyResolve += (sender, args) => {
+                if(args.Name.StartsWith("System.Resources.Extensions")) {
+                    var location = System.IO.Path.GetDirectoryName(typeof(SwAddIn).Assembly.Location);
+                    var dllPath = System.IO.Path.Combine(location, "System.Resources.Extensions.dll");
+                    if(System.IO.File.Exists(dllPath)) {
+                        return System.Reflection.Assembly.LoadFrom(dllPath);
+                    }
+                }
+                return null;
+            };
+        }
+
         public override bool OnConnect() {
             try {
                 var listener = new System.Diagnostics.TextWriterTraceListener(@"g:\code\SldWorksEx\sw_addin_log.txt");
