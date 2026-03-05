@@ -50,15 +50,20 @@ namespace Msg.SwMsgTs.Features.Cube {
             if(!TryGetFaceCenterAndNormal(face, out var center, out var normal))
                 return RebuildResult.FromStatus(false, "Selected face must be planar");
 
-            // 使用 ModelerEx.CreateBox 扩展方法创建正方体
-            var modeler = SwUtils.Modeler;
-            var box = modeler.CreateBox(center, normal, side, side, side);
+            try {
+                // 使用 ModelerEx.CreateBox 扩展方法创建正方体
+                var modeler = SwUtils.Modeler;
+                var box = modeler.CreateBox(center, normal, side, side, side);
 
-            if(box == null)
-                return RebuildResult.FromStatus(false, "Failed to create cube body");
+                if(box == null)
+                    return RebuildResult.FromStatus(false, "Failed to create cube body");
 
-            var featData = feature.GetDefinition() as IMacroFeatureData;
-            return RebuildResult.FromBody(box, featData, true);
+                var featData = feature.GetDefinition() as IMacroFeatureData;
+                return RebuildResult.FromBody(box, featData, true);
+            } catch(Exception ex) {
+                System.Diagnostics.Trace.WriteLine($"Exception in CubeDefinition.OnRebuild: {ex}");
+                return RebuildResult.FromStatus(false, $"Exception: {ex.Message}");
+            }
         }
 
         protected override void OnSetDimensions(ISldWorks app, IModelDoc2 model, IFeature feature,

@@ -43,7 +43,6 @@
     </EmbeddedResource>
   </ItemGroup>
   <Target Name="PostBuild" AfterTargets="PostBuildEvent">
-    <Exec Command="&quot;%25windir%25\Microsoft.NET\Framework64\v4.0.30319\regasm&quot; /codebase &quot;$(TargetPath)&quot;" />
   </Target>
   <ItemGroup>
     <EmbeddedResource Include="Resources\command-group-icon.png" />

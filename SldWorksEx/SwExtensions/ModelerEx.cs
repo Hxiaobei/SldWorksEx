@@ -69,8 +69,11 @@ namespace SolidWorks.Interop.sldworks {
             => ExtrudedSheet(TrimmedSheet(surf, boundary, false), dir, height);
 
         private static ISurface CreatePlanarSurface(IModeler modeler, Vector3 center, Vector3 dir,out Vector3 refDir) {
-
-            var ts = GetTransformBetweenVectors(new Vector3(0, 0, 1), dir, center);
+            Vector3 zAxis = new Vector3(0, 0, 1);
+            if(Math.Abs(Vector3.Dot(zAxis, dir)) > 0.999) {
+                zAxis = new Vector3(1, 0, 0);
+            }
+            var ts = GetTransformBetweenVectors(zAxis, dir, center);
             refDir = ts.TransVector(Vector3.UnitX);
 
             return modeler.CreatePlanarSurface2(center.ToArray(), dir.ToArray(), refDir.ToArray()) as ISurface;
