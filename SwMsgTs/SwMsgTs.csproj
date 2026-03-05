@@ -1,58 +1,54 @@
 <Project Sdk="Microsoft.NET.Sdk">
-
-	<PropertyGroup>
-		<TargetFramework>net48</TargetFramework>
-		<AssemblyName>SwMsgTs</AssemblyName>
-		<RootNamespace>Msg.SwMsgTs</RootNamespace>
-		<OutputType>Library</OutputType>
-		<GenerateDocumentationFile>False</GenerateDocumentationFile>
-		<AssemblyTitle>SwMsgTs</AssemblyTitle>
-		<RunPostBuildEvent>OnBuildSuccess</RunPostBuildEvent>
-		<GenerateResourceUsePreserializedResources>true</GenerateResourceUsePreserializedResources>
-		<CopyLocalLockFileAssemblies>true</CopyLocalLockFileAssemblies>
-	</PropertyGroup>
-
-	<ItemGroup>
-	  <PackageReference Include="System.Resources.Extensions" Version="8.0.0" />
-	</ItemGroup>
-
-	<ItemGroup>
-	  <ProjectReference Include="..\SldWorksEx\SldWorksEx.csproj" />
-	</ItemGroup>
-	
-	<ItemGroup>
-		<Reference Include="SolidWorks.Interop.sldworks">
-			<HintPath>..\thirdpty\SolidWorks.Interop.sldworks.dll</HintPath>
-		</Reference>
-		<Reference Include="SolidWorks.Interop.swconst">
-			<HintPath>..\thirdpty\SolidWorks.Interop.swconst.dll</HintPath>
-		</Reference>
-		<Reference Include="SolidWorks.Interop.swpublished">
-			<HintPath>..\thirdpty\SolidWorks.Interop.swpublished.dll</HintPath>
-		</Reference>
-		<Reference Include="SolidWorksTools">
-			<HintPath>..\thirdpty\SolidWorksTools.dll</HintPath>
-		</Reference>
-		<Reference Include="System.Windows.Forms" />
-	</ItemGroup>
-
-	<ItemGroup>
-	  <Compile Update="Properties\Resources.Designer.cs">
-	    <DesignTime>True</DesignTime>
-	    <AutoGen>True</AutoGen>
-	    <DependentUpon>Resources.resx</DependentUpon>
-	  </Compile>
-	</ItemGroup>
-
-	<ItemGroup>
-	  <EmbeddedResource Update="Properties\Resources.resx">
-	    <Generator>ResXFileCodeGenerator</Generator>
-	    <LastGenOutput>Resources.Designer.cs</LastGenOutput>
-	  </EmbeddedResource>
-	</ItemGroup>
-
-	<Target Name="PostBuild" AfterTargets="PostBuildEvent">
-	  <Exec Command="&quot;%25windir%25\Microsoft.NET\Framework64\v4.0.30319\regasm&quot; /codebase &quot;$(TargetPath)&quot;" />
-	</Target>
-
+  <PropertyGroup>
+    <TargetFramework>net48</TargetFramework>
+    <AssemblyName>SwMsgTs</AssemblyName>
+    <RootNamespace>Msg.SwMsgTs</RootNamespace>
+    <OutputType>Library</OutputType>
+    <GenerateDocumentationFile>False</GenerateDocumentationFile>
+    <AssemblyTitle>SwMsgTs</AssemblyTitle>
+    <RunPostBuildEvent>OnBuildSuccess</RunPostBuildEvent>
+    <GenerateResourceUsePreserializedResources>false</GenerateResourceUsePreserializedResources>
+  </PropertyGroup>
+  <ItemGroup>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\SldWorksEx\SldWorksEx.csproj" />
+  </ItemGroup>
+  <ItemGroup>
+    <Reference Include="SolidWorks.Interop.sldworks">
+      <HintPath>..\thirdpty\SolidWorks.Interop.sldworks.dll</HintPath>
+    </Reference>
+    <Reference Include="SolidWorks.Interop.swconst">
+      <HintPath>..\thirdpty\SolidWorks.Interop.swconst.dll</HintPath>
+    </Reference>
+    <Reference Include="SolidWorks.Interop.swpublished">
+      <HintPath>..\thirdpty\SolidWorks.Interop.swpublished.dll</HintPath>
+    </Reference>
+    <Reference Include="SolidWorksTools">
+      <HintPath>..\thirdpty\SolidWorksTools.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Windows.Forms" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Update="Properties\Resources.Designer.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Update="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+  </ItemGroup>
+  <Target Name="PostBuild" AfterTargets="PostBuildEvent">
+    <Exec Command="&quot;%25windir%25\Microsoft.NET\Framework64\v4.0.30319\regasm&quot; /codebase &quot;$(TargetPath)&quot;" />
+  </Target>
+  <ItemGroup>
+    <EmbeddedResource Include="Resources\command-group-icon.png" />
+    <EmbeddedResource Include="Resources\command1-icon.png" />
+    <EmbeddedResource Include="Resources\command2-icon.png" />
+    <EmbeddedResource Include="Resources\fillet.png" />
+  </ItemGroup>
 </Project>

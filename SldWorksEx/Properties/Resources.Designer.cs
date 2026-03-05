@@ -22,7 +22,7 @@ namespace CodeStack.SwEx.Properties {
     [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Resources.Tools.StronglyTypedResourceBuilder", "18.0.0.0")]
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
     [global::System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
-    internal class Resources {
+    public partial class Resources {
         
         private static global::System.Resources.ResourceManager resourceMan;
         
@@ -57,16 +57,6 @@ namespace CodeStack.SwEx.Properties {
             }
             set {
                 resourceCulture = value;
-            }
-        }
-        
-        /// <summary>
-        ///   查找 System.Drawing.Bitmap 类型的本地化资源。
-        /// </summary>
-        internal static System.Drawing.Bitmap default_icon {
-            get {
-                object obj = ResourceManager.GetObject("default_icon", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
             }
         }
     }
