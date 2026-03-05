@@ -33,7 +33,7 @@ namespace SolidWorks.Interop.sldworks {
                 GetPoint( width / 2, -length / 2)
             };
 
-            ICurve CreateCurve(Vector3 p1, Vector3 p2) => ((ICurve)modeler.CreateLine(p1.ToArray(), (p1 - p2).ToArray()))
+            ICurve CreateCurve(Vector3 p1, Vector3 p2) => ((ICurve)modeler.CreateLine(p1.ToArray(), (p2 - p1).ToArray()))
                 .CreateTrimmedCurve2(p1.X, p1.Y, p1.Z, p2.X, p2.Y, p2.Z);
 
             var curves = new[]
