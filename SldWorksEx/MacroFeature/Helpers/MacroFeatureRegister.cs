@@ -27,7 +27,7 @@ namespace CodeStack.SwEx.MacroFeature.Helpers {
         private readonly string m_BaseName;
         private readonly ILogger m_Logger;
 
-        internal MacroFeatureRegister(string baseName, IModule parentModule) {
+        internal MacroFeatureRegister(string baseName, ISwLog parentModule) {
             m_BaseName = baseName;
             m_Logger = LoggerFactory.Create(parentModule, this.GetType().Name);
 

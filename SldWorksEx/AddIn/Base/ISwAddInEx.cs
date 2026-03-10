@@ -20,7 +20,7 @@ namespace CodeStack.SwEx.AddIn.Base
     /// Base interface for enabling the Framework for SOLIDWORKS add-ins
     /// </summary>
     [ModuleInfo("SwEx.AddIn")]
-    public interface ISwAddInEx : IModule
+    public interface ISwAddInEx : ISwLog
     {
         /// <summary>
         /// Overload to initialize the data. This method is called

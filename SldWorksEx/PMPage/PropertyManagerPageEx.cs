@@ -15,7 +15,7 @@ using CodeStack.SwEx.Common.Diagnostics;
 namespace CodeStack.SwEx.PMPage {
     [ModuleInfo("SwEx.PMPage")]
     public class PropertyManagerPageEx<THandler, TModel> :
-        IPropertyManagerPageEx<THandler, TModel>, IDisposable, IModule
+        IPropertyManagerPageEx<THandler, TModel>, IDisposable, ISwLog
         where THandler : PropertyManagerPageHandlerEx, new() {
         private readonly IconsConverter _iconsConv = new IconsConverter();
         private readonly ILogger _logger;

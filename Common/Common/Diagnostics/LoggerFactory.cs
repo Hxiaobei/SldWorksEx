@@ -34,7 +34,7 @@ namespace CodeStack.SwEx.Common.Diagnostics {
         }
 
         [Browsable(false), EditorBrowsable(EditorBrowsableState.Never)]
-        public static ILogger Create(IModule module, string subModuleName = "") {
+        public static ILogger Create(ISwLog module, string subModuleName = "") {
             return Create(module?.GetType(), subModuleName);
         }
 
@@ -44,8 +44,8 @@ namespace CodeStack.SwEx.Common.Diagnostics {
                 throw new ArgumentNullException(nameof(moduleType));
             
 
-            if(!typeof(IModule).IsAssignableFrom(moduleType)) 
-                throw new InvalidCastException($"{moduleType.FullName} must implement {typeof(IModule).FullName}");
+            if(!typeof(ISwLog).IsAssignableFrom(moduleType)) 
+                throw new InvalidCastException($"{moduleType.FullName} must implement {typeof(ISwLog).FullName}");
             
 
             var logCallStack = false;

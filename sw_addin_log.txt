@@ -128,3 +128,236 @@ CodeStack.SwEx.Common.Attributes.ModuleInfoAttribute.Msg.SwMsgTs.Features.Cube.C
 CodeStack.SwEx.Common.Attributes.ModuleInfoAttribute.Msg.SwMsgTs.SwAddIn: Command clicked: 0.5
 CodeStack.SwEx.Common.Attributes.ModuleInfoAttribute.Msg.SwMsgTs.Features.Cube.CubeDefinition: Rebuilding. Getting parameters
 CodeStack.SwEx.Common.Attributes.ModuleInfoAttribute.Msg.SwMsgTs.Features.Cube.CubeDefinition: Rebuilding. Generating bodies
+--- OnConnect Started ---
+CodeStack.SwEx.Common.Attributes.ModuleInfoAttribute.Msg.SwMsgTs.SwAddIn: Creating command group: 0
+CodeStack.SwEx.Common.Attributes.ModuleInfoAttribute.Msg.SwMsgTs.SwAddIn: Command ids changed: True
+CodeStack.SwEx.Common.Attributes.ModuleInfoAttribute.Msg.SwMsgTs.SwAddIn: Command group creation result: swCreateCommandGroup_Success
+CodeStack.SwEx.Common.Attributes.ModuleInfoAttribute.Msg.SwMsgTs.SwAddIn: Created command 0 for CodeStack.SwEx.AddIn.Core.EnumCommandSpec`1[CodeStack.SwMsgTs.Commands.Commands_e]
+CodeStack.SwEx.Common.Attributes.ModuleInfoAttribute.Msg.SwMsgTs.SwAddIn: Created command 1 for CodeStack.SwEx.AddIn.Core.EnumCommandSpec`1[CodeStack.SwMsgTs.Commands.Commands_e]
+CodeStack.SwEx.Common.Attributes.ModuleInfoAttribute.Msg.SwMsgTs.SwAddIn: Created command 3 for CodeStack.SwEx.AddIn.Core.EnumCommandSpec`1[CodeStack.SwMsgTs.Commands.Commands_e]
+CodeStack.SwEx.Common.Attributes.ModuleInfoAttribute.Msg.SwMsgTs.SwAddIn: Created command 4 for CodeStack.SwEx.AddIn.Core.EnumCommandSpec`1[CodeStack.SwMsgTs.Commands.Commands_e]
+CodeStack.SwEx.Common.Attributes.ModuleInfoAttribute.Msg.SwMsgTs.SwAddIn: Created command 6 for CodeStack.SwEx.AddIn.Core.EnumCommandSpec`1[CodeStack.SwMsgTs.Commands.Commands_e]
+CodeStack.SwEx.Common.Attributes.ModuleInfoAttribute.Msg.SwMsgTs.SwAddIn: Created command 7 for CodeStack.SwEx.AddIn.Core.EnumCommandSpec`1[CodeStack.SwMsgTs.Commands.Commands_e]
+CodeStack.SwEx.Common.Attributes.ModuleInfoAttribute.Msg.SwMsgTs.SwAddIn: Creating command tab box
+CodeStack.SwEx.Common.Attributes.ModuleInfoAttribute.Msg.SwMsgTs.SwAddIn: Creating command group: 1
+CodeStack.SwEx.Common.Attributes.ModuleInfoAttribute.Msg.SwMsgTs.SwAddIn: Command ids changed: True
+CodeStack.SwEx.Common.Attributes.ModuleInfoAttribute.Msg.SwMsgTs.SwAddIn: Command group creation result: swCreateCommandGroup_Success
+CodeStack.SwEx.Common.Attributes.ModuleInfoAttribute.Msg.SwMsgTs.SwAddIn: Created command 0 for CodeStack.SwEx.AddIn.Core.EnumCommandSpec`1[CodeStack.SwMsgTs.Commands.SubCommands_e]
+CodeStack.SwEx.Common.Attributes.ModuleInfoAttribute.Msg.SwMsgTs.SwAddIn: Created command 1 for CodeStack.SwEx.AddIn.Core.EnumCommandSpec`1[CodeStack.SwMsgTs.Commands.SubCommands_e]
+CodeStack.SwEx.Common.Attributes.ModuleInfoAttribute.Msg.SwMsgTs.SwAddIn: Creating command tab box
+CodeStack.SwEx.Common.Attributes.ModuleInfoAttribute.Msg.SwMsgTs.SwAddIn: Creating task pane for CodeStack.SwMsgTs.View.TaskPaneControl type
+XCad.AddIn.SwAddIn: [Debug]Loading add-in
+XCad.AddIn.SwAddIn: [Debug]Creating command group: 1
+XCad.AddIn.SwAddIn: [Debug]Command ids changed: False
+XCad.AddIn.SwAddIn: [Debug]Command group creation result: swCreateCommandGroup_Success
+XCad.AddIn.SwAddIn: [Debug]Created command Create Box:0 for 1
+XCad.AddIn.SwAddIn: [Debug]Created command Create Parametric Box:1 for 2
+XCad.AddIn.SwAddIn: [Debug]Created command About...:2 for 3
+XCad.AddIn.SwAddIn: [Debug]Created command 选择增强:3 for 4
+XCad.AddIn.SwAddIn: [Debug]Command group-1 Id: 59433
+XCad.AddIn.SwAddIn: [Debug]Tab 'SwAddIn' in Part is changed
+XCad.AddIn.SwAddIn: [Debug]Tab 'SwAddIn' in Assembly is not changed
+XCad.AddIn.SwAddIn: [Debug]Tab 'SwAddIn' in Drawing is not changed
+XCad.AddIn.SwAddIn: [Debug]Command clicked: 1.1
+CodeStack.SwEx.Common.Attributes.ModuleInfoAttribute.Msg.SwMsgTs.SwAddIn: Command clicked: 0.5
+CodeStack.SwEx.Common.Attributes.ModuleInfoAttribute.Msg.SwMsgTs.SwAddIn: Command clicked: 0.5
+CodeStack.SwEx.Common.Attributes.ModuleInfoAttribute.Msg.SwMsgTs.Features.Cube.CubeDefinition: Rebuilding. Getting parameters
+CodeStack.SwEx.Common.Attributes.ModuleInfoAttribute.Msg.SwMsgTs.Features.Cube.CubeDefinition: Rebuilding. Generating bodies
+--- OnConnect Started ---
+CodeStack.SwEx.Common.Attributes.ModuleInfoAttribute.Msg.SwMsgTs.SwAddIn: Creating command group: 0
+CodeStack.SwEx.Common.Attributes.ModuleInfoAttribute.Msg.SwMsgTs.SwAddIn: Command ids changed: True
+CodeStack.SwEx.Common.Attributes.ModuleInfoAttribute.Msg.SwMsgTs.SwAddIn: Command group creation result: swCreateCommandGroup_Success
+CodeStack.SwEx.Common.Attributes.ModuleInfoAttribute.Msg.SwMsgTs.SwAddIn: Created command 0 for CodeStack.SwEx.AddIn.Core.EnumCommandSpec`1[CodeStack.SwMsgTs.Commands.Commands_e]
+CodeStack.SwEx.Common.Attributes.ModuleInfoAttribute.Msg.SwMsgTs.SwAddIn: Created command 1 for CodeStack.SwEx.AddIn.Core.EnumCommandSpec`1[CodeStack.SwMsgTs.Commands.Commands_e]
+CodeStack.SwEx.Common.Attributes.ModuleInfoAttribute.Msg.SwMsgTs.SwAddIn: Created command 3 for CodeStack.SwEx.AddIn.Core.EnumCommandSpec`1[CodeStack.SwMsgTs.Commands.Commands_e]
+CodeStack.SwEx.Common.Attributes.ModuleInfoAttribute.Msg.SwMsgTs.SwAddIn: Created command 4 for CodeStack.SwEx.AddIn.Core.EnumCommandSpec`1[CodeStack.SwMsgTs.Commands.Commands_e]
+CodeStack.SwEx.Common.Attributes.ModuleInfoAttribute.Msg.SwMsgTs.SwAddIn: Created command 6 for CodeStack.SwEx.AddIn.Core.EnumCommandSpec`1[CodeStack.SwMsgTs.Commands.Commands_e]
+CodeStack.SwEx.Common.Attributes.ModuleInfoAttribute.Msg.SwMsgTs.SwAddIn: Created command 7 for CodeStack.SwEx.AddIn.Core.EnumCommandSpec`1[CodeStack.SwMsgTs.Commands.Commands_e]
+CodeStack.SwEx.Common.Attributes.ModuleInfoAttribute.Msg.SwMsgTs.SwAddIn: Creating command tab box
+CodeStack.SwEx.Common.Attributes.ModuleInfoAttribute.Msg.SwMsgTs.SwAddIn: Creating command group: 1
+CodeStack.SwEx.Common.Attributes.ModuleInfoAttribute.Msg.SwMsgTs.SwAddIn: Command ids changed: True
+CodeStack.SwEx.Common.Attributes.ModuleInfoAttribute.Msg.SwMsgTs.SwAddIn: Command group creation result: swCreateCommandGroup_Success
+CodeStack.SwEx.Common.Attributes.ModuleInfoAttribute.Msg.SwMsgTs.SwAddIn: Created command 0 for CodeStack.SwEx.AddIn.Core.EnumCommandSpec`1[CodeStack.SwMsgTs.Commands.SubCommands_e]
+CodeStack.SwEx.Common.Attributes.ModuleInfoAttribute.Msg.SwMsgTs.SwAddIn: Created command 1 for CodeStack.SwEx.AddIn.Core.EnumCommandSpec`1[CodeStack.SwMsgTs.Commands.SubCommands_e]
+CodeStack.SwEx.Common.Attributes.ModuleInfoAttribute.Msg.SwMsgTs.SwAddIn: Creating command tab box
+CodeStack.SwEx.Common.Attributes.ModuleInfoAttribute.Msg.SwMsgTs.SwAddIn: Creating task pane for CodeStack.SwMsgTs.View.TaskPaneControl type
+XCad.AddIn.SwAddIn: [Debug]Loading add-in
+XCad.AddIn.SwAddIn: [Debug]Creating command group: 1
+XCad.AddIn.SwAddIn: [Debug]Command ids changed: False
+XCad.AddIn.SwAddIn: [Debug]Command group creation result: swCreateCommandGroup_Success
+XCad.AddIn.SwAddIn: [Debug]Created command Create Box:0 for 1
+XCad.AddIn.SwAddIn: [Debug]Created command Create Parametric Box:1 for 2
+XCad.AddIn.SwAddIn: [Debug]Created command About...:2 for 3
+XCad.AddIn.SwAddIn: [Debug]Created command 选择增强:3 for 4
+XCad.AddIn.SwAddIn: [Debug]Command group-1 Id: 59433
+XCad.AddIn.SwAddIn: [Debug]Tab 'SwAddIn' in Part is changed
+XCad.AddIn.SwAddIn: [Debug]Tab 'SwAddIn' in Assembly is not changed
+XCad.AddIn.SwAddIn: [Debug]Tab 'SwAddIn' in Drawing is not changed
+CodeStack.SwEx.Common.Attributes.ModuleInfoAttribute.Msg.SwMsgTs.SwAddIn: Unloading add-in
+CodeStack.SwEx.Common.Attributes.ModuleInfoAttribute.Msg.SwMsgTs.SwAddIn: Removing group: 0
+CodeStack.SwEx.Common.Attributes.ModuleInfoAttribute.Msg.SwMsgTs.SwAddIn: Removing group: 1
+CodeStack.SwEx.Common.Attributes.ModuleInfoAttribute.Msg.SwMsgTs.SwAddIn: Destroying task pane
+XCad.AddIn.SwAddIn: [Debug]Unloading add-in
+XCad.AddIn.SwAddIn: [Debug]Removing group: 1
+--- OnConnect Started ---
+CodeStack.SwEx.Common.Attributes.ModuleInfoAttribute.Msg.SwMsgTs.SwAddIn: Creating command group: 0
+CodeStack.SwEx.Common.Attributes.ModuleInfoAttribute.Msg.SwMsgTs.SwAddIn: Command ids changed: True
+CodeStack.SwEx.Common.Attributes.ModuleInfoAttribute.Msg.SwMsgTs.SwAddIn: Command group creation result: swCreateCommandGroup_Success
+CodeStack.SwEx.Common.Attributes.ModuleInfoAttribute.Msg.SwMsgTs.SwAddIn: Created command 0 for CodeStack.SwEx.AddIn.Core.EnumCommandSpec`1[CodeStack.SwMsgTs.Commands.Commands_e]
+CodeStack.SwEx.Common.Attributes.ModuleInfoAttribute.Msg.SwMsgTs.SwAddIn: Created command 1 for CodeStack.SwEx.AddIn.Core.EnumCommandSpec`1[CodeStack.SwMsgTs.Commands.Commands_e]
+CodeStack.SwEx.Common.Attributes.ModuleInfoAttribute.Msg.SwMsgTs.SwAddIn: Created command 3 for CodeStack.SwEx.AddIn.Core.EnumCommandSpec`1[CodeStack.SwMsgTs.Commands.Commands_e]
+CodeStack.SwEx.Common.Attributes.ModuleInfoAttribute.Msg.SwMsgTs.SwAddIn: Created command 4 for CodeStack.SwEx.AddIn.Core.EnumCommandSpec`1[CodeStack.SwMsgTs.Commands.Commands_e]
+CodeStack.SwEx.Common.Attributes.ModuleInfoAttribute.Msg.SwMsgTs.SwAddIn: Created command 6 for CodeStack.SwEx.AddIn.Core.EnumCommandSpec`1[CodeStack.SwMsgTs.Commands.Commands_e]
+CodeStack.SwEx.Common.Attributes.ModuleInfoAttribute.Msg.SwMsgTs.SwAddIn: Created command 7 for CodeStack.SwEx.AddIn.Core.EnumCommandSpec`1[CodeStack.SwMsgTs.Commands.Commands_e]
+CodeStack.SwEx.Common.Attributes.ModuleInfoAttribute.Msg.SwMsgTs.SwAddIn: Creating command tab box
+CodeStack.SwEx.Common.Attributes.ModuleInfoAttribute.Msg.SwMsgTs.SwAddIn: Creating command group: 1
+CodeStack.SwEx.Common.Attributes.ModuleInfoAttribute.Msg.SwMsgTs.SwAddIn: Command ids changed: True
+CodeStack.SwEx.Common.Attributes.ModuleInfoAttribute.Msg.SwMsgTs.SwAddIn: Command group creation result: swCreateCommandGroup_Success
+CodeStack.SwEx.Common.Attributes.ModuleInfoAttribute.Msg.SwMsgTs.SwAddIn: Created command 0 for CodeStack.SwEx.AddIn.Core.EnumCommandSpec`1[CodeStack.SwMsgTs.Commands.SubCommands_e]
+CodeStack.SwEx.Common.Attributes.ModuleInfoAttribute.Msg.SwMsgTs.SwAddIn: Created command 1 for CodeStack.SwEx.AddIn.Core.EnumCommandSpec`1[CodeStack.SwMsgTs.Commands.SubCommands_e]
+CodeStack.SwEx.Common.Attributes.ModuleInfoAttribute.Msg.SwMsgTs.SwAddIn: Creating command tab box
+CodeStack.SwEx.Common.Attributes.ModuleInfoAttribute.Msg.SwMsgTs.SwAddIn: Creating task pane for CodeStack.SwMsgTs.View.TaskPaneControl type
+XCad.AddIn.SwAddIn: [Debug]Loading add-in
+XCad.AddIn.SwAddIn: [Debug]Creating command group: 1
+XCad.AddIn.SwAddIn: [Debug]Commands cached in the registry
+XCad.AddIn.SwAddIn: [Debug]Command ids changed: False
+XCad.AddIn.SwAddIn: [Debug]Command group creation result: swCreateCommandGroup_Success
+XCad.AddIn.SwAddIn: [Debug]Created command Create Box:0 for 1
+XCad.AddIn.SwAddIn: [Debug]Created command Create Parametric Box:1 for 2
+XCad.AddIn.SwAddIn: [Debug]Created command About...:2 for 3
+XCad.AddIn.SwAddIn: [Debug]Created command 选择增强:3 for 4
+XCad.AddIn.SwAddIn: [Debug]Command group-1 Id: 59433
+XCad.AddIn.SwAddIn: [Debug]Tab 'SwAddIn' in Part is changed
+XCad.AddIn.SwAddIn: [Debug]Tab 'SwAddIn' in Assembly is not changed
+XCad.AddIn.SwAddIn: [Debug]Tab 'SwAddIn' in Drawing is not changed
+CodeStack.SwEx.Common.Attributes.ModuleInfoAttribute.Msg.SwMsgTs.SwAddIn: Unloading add-in
+CodeStack.SwEx.Common.Attributes.ModuleInfoAttribute.Msg.SwMsgTs.SwAddIn: Removing group: 0
+CodeStack.SwEx.Common.Attributes.ModuleInfoAttribute.Msg.SwMsgTs.SwAddIn: Removing group: 1
+CodeStack.SwEx.Common.Attributes.ModuleInfoAttribute.Msg.SwMsgTs.SwAddIn: Destroying task pane
+XCad.AddIn.SwAddIn: [Debug]Unloading add-in
+XCad.AddIn.SwAddIn: [Debug]Removing group: 1
+--- OnConnect Started ---
+CodeStack.SwEx.Common.Attributes.ModuleInfoAttribute.Msg.SwMsgTs.SwAddIn: Creating command group: 0
+CodeStack.SwEx.Common.Attributes.ModuleInfoAttribute.Msg.SwMsgTs.SwAddIn: Command ids changed: True
+CodeStack.SwEx.Common.Attributes.ModuleInfoAttribute.Msg.SwMsgTs.SwAddIn: Command group creation result: swCreateCommandGroup_Success
+CodeStack.SwEx.Common.Attributes.ModuleInfoAttribute.Msg.SwMsgTs.SwAddIn: Created command 0 for CodeStack.SwEx.AddIn.Core.EnumCommandSpec`1[CodeStack.SwMsgTs.Commands.Commands_e]
+CodeStack.SwEx.Common.Attributes.ModuleInfoAttribute.Msg.SwMsgTs.SwAddIn: Created command 1 for CodeStack.SwEx.AddIn.Core.EnumCommandSpec`1[CodeStack.SwMsgTs.Commands.Commands_e]
+CodeStack.SwEx.Common.Attributes.ModuleInfoAttribute.Msg.SwMsgTs.SwAddIn: Created command 3 for CodeStack.SwEx.AddIn.Core.EnumCommandSpec`1[CodeStack.SwMsgTs.Commands.Commands_e]
+CodeStack.SwEx.Common.Attributes.ModuleInfoAttribute.Msg.SwMsgTs.SwAddIn: Created command 4 for CodeStack.SwEx.AddIn.Core.EnumCommandSpec`1[CodeStack.SwMsgTs.Commands.Commands_e]
+CodeStack.SwEx.Common.Attributes.ModuleInfoAttribute.Msg.SwMsgTs.SwAddIn: Created command 6 for CodeStack.SwEx.AddIn.Core.EnumCommandSpec`1[CodeStack.SwMsgTs.Commands.Commands_e]
+CodeStack.SwEx.Common.Attributes.ModuleInfoAttribute.Msg.SwMsgTs.SwAddIn: Created command 7 for CodeStack.SwEx.AddIn.Core.EnumCommandSpec`1[CodeStack.SwMsgTs.Commands.Commands_e]
+CodeStack.SwEx.Common.Attributes.ModuleInfoAttribute.Msg.SwMsgTs.SwAddIn: Creating command tab box
+CodeStack.SwEx.Common.Attributes.ModuleInfoAttribute.Msg.SwMsgTs.SwAddIn: Creating command group: 1
+CodeStack.SwEx.Common.Attributes.ModuleInfoAttribute.Msg.SwMsgTs.SwAddIn: Command ids changed: True
+CodeStack.SwEx.Common.Attributes.ModuleInfoAttribute.Msg.SwMsgTs.SwAddIn: Command group creation result: swCreateCommandGroup_Success
+CodeStack.SwEx.Common.Attributes.ModuleInfoAttribute.Msg.SwMsgTs.SwAddIn: Created command 0 for CodeStack.SwEx.AddIn.Core.EnumCommandSpec`1[CodeStack.SwMsgTs.Commands.SubCommands_e]
+CodeStack.SwEx.Common.Attributes.ModuleInfoAttribute.Msg.SwMsgTs.SwAddIn: Created command 1 for CodeStack.SwEx.AddIn.Core.EnumCommandSpec`1[CodeStack.SwMsgTs.Commands.SubCommands_e]
+CodeStack.SwEx.Common.Attributes.ModuleInfoAttribute.Msg.SwMsgTs.SwAddIn: Creating command tab box
+CodeStack.SwEx.Common.Attributes.ModuleInfoAttribute.Msg.SwMsgTs.SwAddIn: Creating task pane for CodeStack.SwMsgTs.View.TaskPaneControl type
+XCad.AddIn.SwAddIn: [Debug]Loading add-in
+XCad.AddIn.SwAddIn: [Debug]Creating command group: 1
+XCad.AddIn.SwAddIn: [Debug]Commands cached in the registry
+XCad.AddIn.SwAddIn: [Debug]Command ids changed: False
+XCad.AddIn.SwAddIn: [Debug]Command group creation result: swCreateCommandGroup_Success
+XCad.AddIn.SwAddIn: [Debug]Created command Create Box:0 for 1
+XCad.AddIn.SwAddIn: [Debug]Created command Create Parametric Box:1 for 2
+XCad.AddIn.SwAddIn: [Debug]Created command About...:2 for 3
+XCad.AddIn.SwAddIn: [Debug]Created command 选择增强:3 for 4
+XCad.AddIn.SwAddIn: [Debug]Command group-1 Id: 59433
+XCad.AddIn.SwAddIn: [Debug]Tab 'SwAddIn' in Part is changed
+XCad.AddIn.SwAddIn: [Debug]Tab 'SwAddIn' in Assembly is not changed
+XCad.AddIn.SwAddIn: [Debug]Tab 'SwAddIn' in Drawing is not changed
+XCad.AddIn.SwAddIn: [Debug]Command clicked: 1.2
+XCad.AddIn.SwAddIn: [Error]Exception: GDI+ 中发生一般性错误。
+
+XCad.AddIn.SwAddIn: [Debug]   在 System.Drawing.Image.Save(String filename, ImageCodecInfo encoder, EncoderParameters encoderParams)
+   在 Xarial.XCad.Toolkit.Services.BaseIconsCreator.CreateBitmap(IXImage[] sourceIcons, String targetIcon, Size size, Int32 margin, Color background, ColorMaskDelegate mask, IconImageFormat_e format)
+   在 Xarial.XCad.Toolkit.Services.BaseIconsCreator.ConvertIcon(IIcon icon, String folder)
+   在 Xarial.XCad.SolidWorks.Features.CustomFeature.SwMacroFeatureDefinition.TryCreateIcons(IIconsCreator iconsConverter, String folder)
+
+XCad.AddIn.SwAddIn: [Debug]Assigned selection box marks: 0
+XCad.AddIn.SwAddIn: [Debug]Opening page
+XCad.AddIn.SwAddIn: [Error]Exception: Select planar face or plane for the location
+
+XCad.AddIn.SwAddIn: [Debug]   在 Samples.Sw.CustomFeature.Box.BoxMacroFeatureDefinition.CreateGeometry(ISwApplication app, ISwDocument doc, ISwMacroFeature`1 feat, AlignDimensionDelegate`1& alignDim)
+   在 Xarial.XCad.SolidWorks.Features.CustomFeature.SwMacroFeatureDefinition`2.CreatePreviewGeometry(ISwApplication app, ISwDocument doc, ISwMacroFeature`1 feat, TPage page)
+   在 Xarial.XCad.SolidWorks.Features.CustomFeature.SwMacroFeatureDefinition`2.CreatePreviewGeometry(ISwApplication app, ISwDocument doc, ISwMacroFeature`1 feat, TPage page, ShouldHidePreviewEditBodyDelegate`2& shouldHidePreviewEdit, AssignPreviewBodyColorDelegate& assignPreviewColor)
+   在 Xarial.XCad.SolidWorks.Features.CustomFeature.SwMacroFeatureDefinition`2.CreatePreviewGeometry(IXApplication app, IXDocument doc, IXCustomFeature`1 feat, TPage page, ShouldHidePreviewEditBodyDelegate`2& shouldHidePreviewEdit, AssignPreviewBodyColorDelegate& assignPreviewColor)
+   在 Xarial.XCad.Utils.CustomFeature.BaseCustomFeatureEditor`2.UpdatePreview()
+
+XCad.AddIn.SwAddIn: [Error]Exception: GDI+ 中发生一般性错误。
+
+XCad.AddIn.SwAddIn: [Debug]   在 System.Drawing.Image.Save(String filename, ImageCodecInfo encoder, EncoderParameters encoderParams)
+   在 Xarial.XCad.Toolkit.Services.BaseIconsCreator.CreateBitmap(IXImage[] sourceIcons, String targetIcon, Size size, Int32 margin, Color background, ColorMaskDelegate mask, IconImageFormat_e format)
+   在 Xarial.XCad.Toolkit.Services.BaseIconsCreator.ConvertIcon(IIcon icon, String folder)
+   在 Xarial.XCad.SolidWorks.Features.CustomFeature.SwMacroFeatureDefinition.TryCreateIcons(IIconsCreator iconsConverter, String folder)
+
+CodeStack.SwEx.Common.Attributes.ModuleInfoAttribute.Msg.SwMsgTs.SwAddIn: Unloading add-in
+CodeStack.SwEx.Common.Attributes.ModuleInfoAttribute.Msg.SwMsgTs.SwAddIn: Removing group: 0
+CodeStack.SwEx.Common.Attributes.ModuleInfoAttribute.Msg.SwMsgTs.SwAddIn: Removing group: 1
+CodeStack.SwEx.Common.Attributes.ModuleInfoAttribute.Msg.SwMsgTs.SwAddIn: Destroying task pane
+XCad.AddIn.SwAddIn: [Debug]Unloading add-in
+XCad.AddIn.SwAddIn: [Debug]Removing group: 1
+--- OnConnect Started ---
+CodeStack.SwEx.Common.Attributes.ModuleInfoAttribute.Msg.SwMsgTs.SwAddIn: Creating command group: 0
+CodeStack.SwEx.Common.Attributes.ModuleInfoAttribute.Msg.SwMsgTs.SwAddIn: Command ids changed: True
+CodeStack.SwEx.Common.Attributes.ModuleInfoAttribute.Msg.SwMsgTs.SwAddIn: Command group creation result: swCreateCommandGroup_Success
+CodeStack.SwEx.Common.Attributes.ModuleInfoAttribute.Msg.SwMsgTs.SwAddIn: Created command 0 for CodeStack.SwEx.AddIn.Core.EnumCommandSpec`1[CodeStack.SwMsgTs.Commands.Commands_e]
+CodeStack.SwEx.Common.Attributes.ModuleInfoAttribute.Msg.SwMsgTs.SwAddIn: Created command 1 for CodeStack.SwEx.AddIn.Core.EnumCommandSpec`1[CodeStack.SwMsgTs.Commands.Commands_e]
+CodeStack.SwEx.Common.Attributes.ModuleInfoAttribute.Msg.SwMsgTs.SwAddIn: Created command 3 for CodeStack.SwEx.AddIn.Core.EnumCommandSpec`1[CodeStack.SwMsgTs.Commands.Commands_e]
+CodeStack.SwEx.Common.Attributes.ModuleInfoAttribute.Msg.SwMsgTs.SwAddIn: Created command 4 for CodeStack.SwEx.AddIn.Core.EnumCommandSpec`1[CodeStack.SwMsgTs.Commands.Commands_e]
+CodeStack.SwEx.Common.Attributes.ModuleInfoAttribute.Msg.SwMsgTs.SwAddIn: Created command 6 for CodeStack.SwEx.AddIn.Core.EnumCommandSpec`1[CodeStack.SwMsgTs.Commands.Commands_e]
+CodeStack.SwEx.Common.Attributes.ModuleInfoAttribute.Msg.SwMsgTs.SwAddIn: Created command 7 for CodeStack.SwEx.AddIn.Core.EnumCommandSpec`1[CodeStack.SwMsgTs.Commands.Commands_e]
+CodeStack.SwEx.Common.Attributes.ModuleInfoAttribute.Msg.SwMsgTs.SwAddIn: Creating command tab box
+CodeStack.SwEx.Common.Attributes.ModuleInfoAttribute.Msg.SwMsgTs.SwAddIn: Creating command group: 1
+CodeStack.SwEx.Common.Attributes.ModuleInfoAttribute.Msg.SwMsgTs.SwAddIn: Command ids changed: True
+CodeStack.SwEx.Common.Attributes.ModuleInfoAttribute.Msg.SwMsgTs.SwAddIn: Command group creation result: swCreateCommandGroup_Success
+CodeStack.SwEx.Common.Attributes.ModuleInfoAttribute.Msg.SwMsgTs.SwAddIn: Created command 0 for CodeStack.SwEx.AddIn.Core.EnumCommandSpec`1[CodeStack.SwMsgTs.Commands.SubCommands_e]
+CodeStack.SwEx.Common.Attributes.ModuleInfoAttribute.Msg.SwMsgTs.SwAddIn: Created command 1 for CodeStack.SwEx.AddIn.Core.EnumCommandSpec`1[CodeStack.SwMsgTs.Commands.SubCommands_e]
+CodeStack.SwEx.Common.Attributes.ModuleInfoAttribute.Msg.SwMsgTs.SwAddIn: Creating command tab box
+CodeStack.SwEx.Common.Attributes.ModuleInfoAttribute.Msg.SwMsgTs.SwAddIn: Creating task pane for CodeStack.SwMsgTs.View.TaskPaneControl type
+XCad.AddIn.SwAddIn: [Debug]Loading add-in
+XCad.AddIn.SwAddIn: [Debug]Creating command group: 1
+XCad.AddIn.SwAddIn: [Debug]Commands cached in the registry
+XCad.AddIn.SwAddIn: [Debug]Command ids changed: False
+XCad.AddIn.SwAddIn: [Debug]Command group creation result: swCreateCommandGroup_Success
+XCad.AddIn.SwAddIn: [Debug]Created command Create Box:0 for 1
+XCad.AddIn.SwAddIn: [Debug]Created command Create Parametric Box:1 for 2
+XCad.AddIn.SwAddIn: [Debug]Created command About...:2 for 3
+XCad.AddIn.SwAddIn: [Debug]Created command 选择增强:3 for 4
+XCad.AddIn.SwAddIn: [Debug]Command group-1 Id: 59433
+XCad.AddIn.SwAddIn: [Debug]Tab 'SwAddIn' in Part is changed
+XCad.AddIn.SwAddIn: [Debug]Tab 'SwAddIn' in Assembly is not changed
+XCad.AddIn.SwAddIn: [Debug]Tab 'SwAddIn' in Drawing is not changed
+XCad.AddIn.SwAddIn: [Debug]Command clicked: 1.1
+XCad.AddIn.SwAddIn: [Debug]Command clicked: 1.2
+XCad.AddIn.SwAddIn: [Error]Exception: GDI+ 中发生一般性错误。
+
+XCad.AddIn.SwAddIn: [Debug]   在 System.Drawing.Image.Save(String filename, ImageCodecInfo encoder, EncoderParameters encoderParams)
+   在 Xarial.XCad.Toolkit.Services.BaseIconsCreator.CreateBitmap(IXImage[] sourceIcons, String targetIcon, Size size, Int32 margin, Color background, ColorMaskDelegate mask, IconImageFormat_e format)
+   在 Xarial.XCad.Toolkit.Services.BaseIconsCreator.ConvertIcon(IIcon icon, String folder)
+   在 Xarial.XCad.SolidWorks.Features.CustomFeature.SwMacroFeatureDefinition.TryCreateIcons(IIconsCreator iconsConverter, String folder)
+
+XCad.AddIn.SwAddIn: [Debug]Assigned selection box marks: 0
+XCad.AddIn.SwAddIn: [Debug]Opening page
+XCad.AddIn.SwAddIn: [Error]Exception: Select planar face or plane for the location
+
+XCad.AddIn.SwAddIn: [Debug]   在 Samples.Sw.CustomFeature.Box.BoxMacroFeatureDefinition.CreateGeometry(ISwApplication app, ISwDocument doc, ISwMacroFeature`1 feat, AlignDimensionDelegate`1& alignDim)
+   在 Xarial.XCad.SolidWorks.Features.CustomFeature.SwMacroFeatureDefinition`2.CreatePreviewGeometry(ISwApplication app, ISwDocument doc, ISwMacroFeature`1 feat, TPage page)
+   在 Xarial.XCad.SolidWorks.Features.CustomFeature.SwMacroFeatureDefinition`2.CreatePreviewGeometry(ISwApplication app, ISwDocument doc, ISwMacroFeature`1 feat, TPage page, ShouldHidePreviewEditBodyDelegate`2& shouldHidePreviewEdit, AssignPreviewBodyColorDelegate& assignPreviewColor)
+   在 Xarial.XCad.SolidWorks.Features.CustomFeature.SwMacroFeatureDefinition`2.CreatePreviewGeometry(IXApplication app, IXDocument doc, IXCustomFeature`1 feat, TPage page, ShouldHidePreviewEditBodyDelegate`2& shouldHidePreviewEdit, AssignPreviewBodyColorDelegate& assignPreviewColor)
+   在 Xarial.XCad.Utils.CustomFeature.BaseCustomFeatureEditor`2.UpdatePreview()
+
+XCad.AddIn.SwAddIn: [Error]Exception: GDI+ 中发生一般性错误。
+
+XCad.AddIn.SwAddIn: [Debug]   在 System.Drawing.Image.Save(String filename, ImageCodecInfo encoder, EncoderParameters encoderParams)
+   在 Xarial.XCad.Toolkit.Services.BaseIconsCreator.CreateBitmap(IXImage[] sourceIcons, String targetIcon, Size size, Int32 margin, Color background, ColorMaskDelegate mask, IconImageFormat_e format)
+   在 Xarial.XCad.Toolkit.Services.BaseIconsCreator.ConvertIcon(IIcon icon, String folder)
+   在 Xarial.XCad.SolidWorks.Features.CustomFeature.SwMacroFeatureDefinition.TryCreateIcons(IIconsCreator iconsConverter, String folder)
+
+CodeStack.SwEx.Common.Attributes.ModuleInfoAttribute.Msg.SwMsgTs.SwAddIn: Unloading add-in
+CodeStack.SwEx.Common.Attributes.ModuleInfoAttribute.Msg.SwMsgTs.SwAddIn: Removing group: 0
+CodeStack.SwEx.Common.Attributes.ModuleInfoAttribute.Msg.SwMsgTs.SwAddIn: Removing group: 1
+CodeStack.SwEx.Common.Attributes.ModuleInfoAttribute.Msg.SwMsgTs.SwAddIn: Destroying task pane
+XCad.AddIn.SwAddIn: [Debug]Unloading add-in
+XCad.AddIn.SwAddIn: [Debug]Removing group: 1

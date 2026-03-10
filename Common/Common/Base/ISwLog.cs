@@ -12,7 +12,7 @@ namespace CodeStack.SwEx.Common.Base
     /// <summary>
     /// Base interface for SwEx modules
     /// </summary>
-    public interface IModule
+    public interface ISwLog
     {
         /// <summary>
         /// Logger for this module
